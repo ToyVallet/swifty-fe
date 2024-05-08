@@ -1,11 +1,6 @@
 {
-  "name": "danfesta2024",
-  "author": {
-    "name": "이호연",
-    "email": "ho991217@kakao.com",
-    "url": "https://github.com/ho991217"
-  },
-  "version": "0.2.0",
+  "name": "Swifty",
+  "version": "0.1.0",
   "license": "Proprietary",
   "scripts": {
     "dev": "next dev",
@@ -117,7 +112,6 @@
     "ts-node": "^10.9.2",
     "typescript": "^5"
   },
-  "packageManager": "yarn@4.1.1",
   "browserslist": [
     ">0.2%",
     "not dead",

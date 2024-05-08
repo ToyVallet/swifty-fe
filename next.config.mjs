@@ -1,6 +1,5 @@
 import withBundleAnalyzer from '@next/bundle-analyzer';
 import withPlaiceholder from '@plaiceholder/next';
-import { withSentryConfig } from '@sentry/nextjs';
 import createNextIntlPlugin from 'next-intl/plugin';
 import withPWA from 'next-pwa';
 
@@ -50,20 +49,18 @@ const nextConfig = {
 
 export default withBundleAnalyzerConfig(
   withPWAConfig(
-    withSentryConfig(
-      withNextIntl(withPlaiceholder(nextConfig)),
-      {
-        silent: true,
-        org: 'danfesta',
-        project: 'javascript-nextjs',
-      },
-      {
-        widenClientFileUpload: true,
-        tunnelRoute: '/monitoring',
-        hideSourceMaps: true,
-        disableLogger: true,
-        automaticVercelMonitors: true,
-      },
-    ),
+    withNextIntl(withPlaiceholder(nextConfig)),
+    {
+      silent: true,
+      org: 'danfesta',
+      project: 'javascript-nextjs',
+    },
+    {
+      widenClientFileUpload: true,
+      tunnelRoute: '/monitoring',
+      hideSourceMaps: true,
+      disableLogger: true,
+      automaticVercelMonitors: true,
+    },
   ),
 );

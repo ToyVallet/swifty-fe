@@ -6,25 +6,25 @@ import './globals.css';
 import Providers from './providers';
 
 export const metadata: Metadata = {
-  title: '단페스타 2024',
-  description: '단국대학교 대동제 2024 공식 홈페이지 입니다.',
+  title: 'Swifty',
+  description: '전국 대학 축제 종합 솔루션, 스위프티 입니다.',
   manifest: '/manifest.json',
   viewport:
     'minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover',
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    title: '단페스타 2024',
-    description: '단국대학교 대동제 2024 공식 홈페이지 입니다.',
-    url: 'https://danfesta.com',
-    siteName: '단페스타 2024',
+    title: 'Swifty',
+    description: '전국 대학 축제 종합 솔루션, 스위프티 입니다.',
+    url: 'https://swifty-festival.vercel.app',
+    siteName: 'Swifty',
     images: [
       {
-        url: 'https://www.danfesta.com/opengraph-image.png',
+        url: 'https://swifty-festival.vercel.app/opengraph-image.png',
       },
     ],
   },
-  metadataBase: new URL('/', 'https://www.danfesta.com/'),
+  metadataBase: new URL('/', 'https://swifty-festival.vercel.app'),
 };
 
 export const viewport: Viewport = {
