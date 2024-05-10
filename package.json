@@ -26,7 +26,6 @@
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-separator": "^1.0.3",
-    "@sentry/nextjs": "^7.105.0",
     "@vercel/analytics": "^1.2.2",
     "@vercel/blob": "^0.22.3",
     "@vercel/speed-insights": "^1.0.10",
@@ -112,6 +111,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5"
   },
+  "packageManager": "yarn@1.22.21",
   "browserslist": [
     ">0.2%",
     "not dead",
