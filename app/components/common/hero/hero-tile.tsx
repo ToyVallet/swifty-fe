@@ -18,7 +18,7 @@ export default function HeroTile({
           priority={priority}
           src={festivalFiles[0].file}
           alt={name}
-          className="object-cover"
+          className="object-fill"
           loading="eager"
           quality={100}
           fill
