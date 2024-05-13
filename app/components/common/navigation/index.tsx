@@ -9,9 +9,16 @@ import { IoArrowBackOutline } from 'react-icons/io5';
 type Props = {
   hasBackButton?: boolean;
   scheme?: 'light' | 'dark';
+  isLogo?: boolean;
+  title?: string;
 };
 
-export default function Navigation({ hasBackButton = false, scheme }: Props) {
+export default function Navigation({
+  scheme,
+  title,
+  hasBackButton = false,
+  isLogo = true,
+}: Props) {
   return (
     <nav
       className={cn(
@@ -20,10 +27,13 @@ export default function Navigation({ hasBackButton = false, scheme }: Props) {
     >
       <If condition={hasBackButton}>
         <If.Then>
-          <BackButton>
+          <BackButton className="text-white font-bold text-base flex items-center gap-0.5">
             <IoArrowBackOutline size={25} className={'text-white'} />
+            {title}
           </BackButton>
-          <LogoLink />
+          {isLogo && (
+            <LogoLink className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+          )}
         </If.Then>
         <If.Else>
           <div className="w-full flex justify-between items-center">

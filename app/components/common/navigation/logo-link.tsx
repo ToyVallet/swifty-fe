@@ -1,9 +1,14 @@
 import { Link } from '@/app/components/common/';
+import { cn } from '@/app/lib/utils';
 import Logo from '@icons/logo.svg';
 
-export default function LogoLink() {
+interface Prop {
+  className?: string;
+}
+
+export default function LogoLink({ className }: Prop) {
   return (
-    <Link href="/" className="w-auto h-auto items-center">
+    <Link href="/" className={cn('w-auto h-auto items-center', className)}>
       <Logo />
     </Link>
   );
