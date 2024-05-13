@@ -42,7 +42,9 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'webinfo.dankook.ac.kr',
       },
-      { protocol: 'https', hostname: 'image.yes24.com' },
+      { protocol: 'https', hostname: 'scontent.cdninstagram.com' },
+      { protocol: 'https', hostname: 'sgyoonseul24.notion.site' },
+      { protocol: 'https', hostname: 'scontent-den2-1.cdninstagram.com' },
     ],
   },
 };
