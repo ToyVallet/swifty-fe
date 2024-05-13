@@ -6,7 +6,7 @@ const meta: Meta<typeof Overlay> = {
   title: 'COMMON/Overlay',
   component: Overlay,
   argTypes: { darker: { control: 'boolean' } },
-  tags: ['autoDocs'],
+  tags: ['autodocs'],
 };
 
 export default meta;
