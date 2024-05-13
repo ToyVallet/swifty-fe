@@ -1,4 +1,5 @@
-import { AdBanner } from '@components/common';
+import { festivalLinupes } from '@/app/lib/mock/data';
+import { AdBanner, Hero, HeroCarousel } from '@components/common';
 import {
   LineupTile,
   MenuTiles,
@@ -8,12 +9,14 @@ import {
 import { getAllLineupInfo } from '../(back-nav)/lineup/actions';
 
 export default async function Home() {
-  const lineups = await getAllLineupInfo();
+  //const lineups = await getAllLineupInfo();
 
   return (
     <div className="mb-20 flex flex-col gap-4 px-5 lg:mx-auto lg:max-w-full lg:px-10 lg:gap-8">
       <NeedReverificationTile />
-      <LineupTile lineups={lineups} />
+      <Hero>
+        <HeroCarousel lineups={festivalLinupes} />
+      </Hero>
       <AdBanner />
       <MenuTiles />
     </div>
