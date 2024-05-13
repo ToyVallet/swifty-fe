@@ -3,42 +3,6 @@ import { Festival } from '@/app/lib/types';
 export const festivalLinupes: Festival[] = [
   {
     subId: '',
-    name: '협성대학교',
-    addr: '협성대학교',
-    startDate: '2024-05-22',
-    endDate: '2024-05-23',
-    festivalStatus: 'BEFORE',
-    description: '2024년 협성대학교 대동제',
-    url: 'https://www.instagram.com/47_hyupsung/',
-    festivalFiles: [
-      {
-        originalFileName: 'poster',
-        mimeType: 'jpeg',
-        file: 'https://scontent-den2-1.cdninstagram.com/v/t51.29350-15/438657674_729043362726868_1785190286018750720_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE0NDAuc2RyLmYyOTM1MCJ9&_nc_ht=scontent-den2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=fGDsCwLV4P0Q7kNvgEtGL7k&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzM0NjcxMzMwMDMyOTg5NjczMg%3D%3D.2-ccb7-5&oh=00_AYC4NqgX8pUyK_pf97QunmG1hY0jIHXzaO4fg04tLRZl_Q&oe=66457B89&_nc_sid=10d13b',
-        type: 'POSTER',
-      },
-    ],
-  },
-  {
-    subId: '',
-    name: '한림대학교',
-    addr: '한림대학교',
-    startDate: '2024-05-21',
-    endDate: '2024-05-23',
-    festivalStatus: 'BEFORE',
-    description: '2024년 한림대학교 대동제: 영화',
-    url: 'https://www.instagram.com/hallym38th_run/',
-    festivalFiles: [
-      {
-        originalFileName: 'poster',
-        mimeType: 'jpeg',
-        file: 'https://scontent.cdninstagram.com/v/t51.29350-15/441024511_3740483272939275_3789548870244317448_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDEwODAuc2RyLmYyOTM1MCJ9&_nc_ht=scontent.cdninstagram.com&_nc_cat=103&_nc_ohc=D-Of5Hvgm-wQ7kNvgFCykKA&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzM2MjY2MDcxODQyMzI1NDcyNw%3D%3D.2-ccb7-5&oh=00_AYCZyi7NR-Ry4nKNaeTSh7wHNert2WOP846zTQW-eZjvKg&oe=66459D5F&_nc_sid=10d13b',
-        type: 'POSTER',
-      },
-    ],
-  },
-  {
-    subId: '',
     name: '서울시립대학교',
     addr: '서울시립대학교',
     startDate: '2024-05-20',
@@ -69,24 +33,6 @@ export const festivalLinupes: Festival[] = [
         originalFileName: 'image',
         mimeType: 'pdf',
         file: 'https://sgyoonseul24.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F6e4b63c2-b1b3-4c65-bddb-dcabd308584a%2Fb19bcb47-b721-4555-80cb-2883d71714d7%2F24_%25E1%2584%2583%25E1%2585%25A2%25E1%2584%2583%25E1%2585%25A9%25E1%2586%25BC%25E1%2584%258C%25E1%2585%25A6_%25E1%2584%2591%25E1%2585%25A9%25E1%2584%2589%25E1%2585%25B3%25E1%2584%2590%25E1%2585%25A5(%25E1%2584%2582%25E1%2585%25A9%25E1%2584%2589%25E1%2585%25A7%25E1%2586%25AB%25E1%2584%258B%25E1%2585%25AD%25E1%2586%25BC).jpg?table=block&id=7627f7aa-2689-4357-92f4-89432176290f&spaceId=6e4b63c2-b1b3-4c65-bddb-dcabd308584a&width=2000&userId=&cache=v2',
-        type: 'POSTER',
-      },
-    ],
-  },
-  {
-    subId: '',
-    name: '경북대학교',
-    addr: '경북대학교',
-    startDate: '2024-05-21',
-    endDate: '2024-05-23',
-    festivalStatus: 'BEFORE',
-    description: '2024년 경북대학교 대동제: 하푸르나',
-    url: 'https://www.instagram.com/knu_ch',
-    festivalFiles: [
-      {
-        originalFileName: 'image',
-        mimeType: 'pdf',
-        file: 'https://scontent-den2-1.cdninstagram.com/v/t51.29350-15/438657674_729043362726868_1785190286018750720_n.jpg?stp=dst-jpg_e35&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE0NDAuc2RyLmYyOTM1MCJ9&_nc_ht=scontent-den2-1.cdninstagram.com&_nc_cat=104&_nc_ohc=fGDsCwLV4P0Q7kNvgEtGL7k&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzM0NjcxMzMwMDMyOTg5NjczMg%3D%3D.2-ccb7-5&oh=00_AYC4NqgX8pUyK_pf97QunmG1hY0jIHXzaO4fg04tLRZl_Q&oe=66457B89&_nc_sid=10d13b',
         type: 'POSTER',
       },
     ],
