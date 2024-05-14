@@ -35,7 +35,7 @@ export default function Carousel({
       <div className="h-full w-full relative" ref={emblaRef}>
         <div className={cn('flex h-full w-full', className)}>{children}</div>
         {hasIndicator && Array.isArray(children) && (
-          <div className="absolute z-50 bottom-[70px] right-4 bg-bgBlack text-white font-bold text-xs px-2.5 py-[1px] rounded-lg">
+          <div className="absolute z-50 bottom-[55px] right-4 bg-bgBlack text-white font-bold text-xs px-2.5 py-[1px] rounded-lg">
             {`${currentIndex + 1} / ${children.length}`}
           </div>
         )}

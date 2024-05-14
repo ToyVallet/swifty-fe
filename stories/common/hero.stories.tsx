@@ -1,6 +1,6 @@
 import HeroTile from '@/app/components/common/hero/hero-tile';
 import { festivalLinupes } from '@/app/lib/mock/data';
-import { Hero } from '@components/common';
+import { Carousel, Hero } from '@components/common';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Hero> = {
@@ -30,6 +30,21 @@ export const Hero_Tile: Story = {
     return (
       <Hero>
         <HeroTile {...festivalLinupes[0]} />
+      </Hero>
+    );
+  },
+};
+
+export const Hero_Carousel: Story = {
+  args: {},
+  render: () => {
+    return (
+      <Hero>
+        <Carousel hasIndicator>
+          {festivalLinupes.map((fetsival) => (
+            <HeroTile key={fetsival.name} {...fetsival} />
+          ))}
+        </Carousel>
       </Hero>
     );
   },

@@ -25,7 +25,7 @@ export default function HeroTile({
         <div className="absolute bottom-0 left-0 right-0 top-0 bg-gradient-hero-carousel" />
       </div>
 
-      <div className="absolute bottom-0 left-4 right-4 flex h-1/3 gap-y-1.5 flex-col rounded-2xl text-white">
+      <div className="absolute bottom-[-16px] left-5 flex h-1/3 gap-y-1.5 flex-col rounded-2xl text-white">
         <div className="text-xl font-semibold">
           <h4>{name}</h4>
           <span>{description}</span>
