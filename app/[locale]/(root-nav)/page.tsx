@@ -12,7 +12,7 @@ export default async function Home() {
   //const lineups = await getAllLineupInfo();
 
   return (
-    <div className="mb-20 flex flex-col gap-4 px-5 lg:mx-auto lg:max-w-full lg:px-10 lg:gap-8">
+    <div className="mb-20 flex flex-col gap-4 lg:mx-auto lg:max-w-full lg:gap-8">
       <NeedReverificationTile />
       <Hero>
         <HeroCarousel lineups={festivalLinupes} />

@@ -1,8 +1,8 @@
 'use client';
 
-import { IntlProvider } from '@/app/components/common';
-import HeroTile from '@/app/components/common/hero/hero-tile';
-import { Festival } from '@/app/lib/types';
+import { IntlProvider } from '@components/common';
+import HeroTile from '@components/common/hero/hero-tile';
+import { Festival } from '@lib/types';
 import useEmblaCarousel from 'embla-carousel-react';
 import React, { useEffect, useState } from 'react';
 

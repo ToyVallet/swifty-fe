@@ -1,4 +1,4 @@
-export default function parserDate(start: string, end: string) {
+export default function formatDate(start: string, end: string) {
   const start_day = start.split('-');
   const end_day = end.split('-');
 
