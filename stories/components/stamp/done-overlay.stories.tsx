@@ -7,7 +7,7 @@ const meta: Meta<typeof DoneOverlay> = {
     isDone: { control: 'boolean' },
   },
   component: DoneOverlay,
-  tags: ['autoDocs'],
+  tags: ['autodocs'],
 };
 
 export default meta;

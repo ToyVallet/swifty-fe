@@ -6,7 +6,7 @@ const meta: Meta<typeof MenuTiles> = {
   component: MenuTiles,
   argTypes: {},
   parameters: {},
-  tags: ['autoDocs'],
+  tags: ['autodocs'],
 };
 
 export default meta;

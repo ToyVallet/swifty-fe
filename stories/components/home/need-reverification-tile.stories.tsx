@@ -6,7 +6,7 @@ import { createMock } from 'storybook-addon-module-mock';
 const meta: Meta<typeof NeedReverificationTile> = {
   title: 'COMPONENTS/HOME/NeedReverificationTile',
   component: NeedReverificationTile,
-  tags: ['autoDocs'],
+  tags: ['autodocs'],
 };
 
 export default meta;

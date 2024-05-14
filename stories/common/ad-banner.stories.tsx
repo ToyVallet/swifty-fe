@@ -13,7 +13,7 @@ const meta: Meta<typeof AdBanner> = {
       },
     },
   },
-  tags: ['autoDocs'],
+  tags: ['autodocs'],
 };
 
 export default meta;
