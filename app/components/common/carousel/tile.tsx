@@ -11,11 +11,10 @@ export default function Tile({
   description,
   priority = false,
 }: FestivalInfo & { priority?: boolean }) {
-  const imageUrl = festivalFiles.length > 0 ? festivalFiles[0].file : NoLineup.src;
-  const altText =
-    festivalFiles.length > 0 ? festivalFiles[0].originalFileName : '아티스트 미공개';
+  const imageUrl = festivalFiles[0].file;
+  const altText = festivalFiles[0].originalFileName;
   const period =
-    `${startDate.replaceAll('-', '.')} ~ ${endDate.replaceAll('-', '.')}`;
+    `${startDate} ~ ${endDate}`.replaceAll('-', '.');
 
   return (
     <div className="bg-bg flex-[0_0_9.375rem] text-white lg:basis-[18.75rem]">
@@ -27,13 +26,13 @@ export default function Tile({
           alt={altText}
           fill
           loading='eager'
-          blurDataURL={NoLineup.blurDataURL}
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVR42mN8//HLfwYiAOOoQvoqBABbWyZJf74GZgAAAABJRU5ErkJggg=="
           placeholder="blur"
           sizes='33vw'
         />
       </figure>
       <div className='pt-[10px] flex flex-col items-between'>
-        <div className='h-12 w-36 font-bold'>
+        <div className='h-12 w-40 lg:w-80 font-bold'>
           <h4>{name}</h4>
           <p className='pt-1 truncate'>{description}</p>
         </div>

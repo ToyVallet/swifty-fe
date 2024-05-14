@@ -24,7 +24,7 @@ export async function getAllDummyFestivalInfo(): Promise<FestivalInfo[]> {
     setTimeout(() => {
       resolve([
         {
-          "subId": "",
+          "subId": "1",
           "name": "Danfesta 2024",
           "addr": "단국대 죽전캠퍼스",
           "startDate": "2024-05-22",
@@ -42,7 +42,7 @@ export async function getAllDummyFestivalInfo(): Promise<FestivalInfo[]> {
           ],
         },
         {
-          "subId": "",
+          "subId": "2",
           "name": "아우름제",
           "addr": "가톨릭대학교",
           "startDate": "2024-05-22",
@@ -60,7 +60,7 @@ export async function getAllDummyFestivalInfo(): Promise<FestivalInfo[]> {
           ]
         },
         {
-          "subId": "",
+          "subId": "3",
           "name": "청림축제",
           "addr": "한남대학교",
           "startDate": "2024-05-22",
@@ -78,7 +78,7 @@ export async function getAllDummyFestivalInfo(): Promise<FestivalInfo[]> {
           ],
         },
         {
-          "subId": "",
+          "subId": "4",
           "name": "RACHIOS : 파도",
           "addr": "한양대학교",
           "startDate": "2024-05-22",
@@ -96,7 +96,7 @@ export async function getAllDummyFestivalInfo(): Promise<FestivalInfo[]> {
           ],
         },
         {
-          "subId": "",
+          "subId": "5",
           "name": "2024 GRACIA",
           "addr": "조선대학교",
           "startDate": "2024-05-27",
@@ -114,7 +114,7 @@ export async function getAllDummyFestivalInfo(): Promise<FestivalInfo[]> {
           ],
         },
         {
-          "subId": "",
+          "subId": "6",
           "name": "백상대동제",
           "addr": "동국대학교",
           "startDate": "2024-05-28",
