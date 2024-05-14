@@ -49,7 +49,6 @@ const config = {
         primary: '#0073E5',
         secondary: '#DD2DE7',
         ternary: '#00E7E7',
-        bg: '#000206',
         // primary: '#C892EA',
         // primary: '#0262E9',
         gray: {

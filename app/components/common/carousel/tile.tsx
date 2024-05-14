@@ -17,7 +17,7 @@ export default function Tile({
     `${startDate} ~ ${endDate}`.replaceAll('-', '.');
 
   return (
-    <div className="bg-bg flex-[0_0_9.375rem] text-white lg:basis-[18.75rem]">
+    <div className="bg-bgBlack flex-[0_0_9.375rem] text-white lg:basis-[18.75rem]">
       <figure className='relative aspect-[3/4]'>
         <Image
           className='absolute object-cover'
