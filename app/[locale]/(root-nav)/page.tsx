@@ -1,19 +1,18 @@
 import { AdBanner } from '@components/common';
 import {
-  LineupTile,
   MenuTiles,
   NeedReverificationTile,
 } from '@components/home';
-
-import { getAllLineupInfo } from '../(back-nav)/lineup/actions';
+import FestivalTile from '@/app/components/home/festival-tile';
+import { getAllDummyFestivalInfo } from '@/app/[locale]/(back-nav)/festival/actions';
 
 export default async function Home() {
-  const lineups = await getAllLineupInfo();
+  const dummies = await getAllDummyFestivalInfo();
 
   return (
     <div className="mb-20 flex flex-col gap-4 px-5 lg:mx-auto lg:max-w-full lg:px-10 lg:gap-8">
       <NeedReverificationTile />
-      <LineupTile lineups={lineups} />
+      <FestivalTile festivals={dummies} />
       <AdBanner />
       <MenuTiles />
     </div>
