@@ -13,50 +13,21 @@ export type Params<P extends Record<string, any>> = {
 export type SearchParams<P extends Record<string, any>> = {
   searchParams: P;
 };
-
-export interface ImageFile {
+export type FestivalImage = {
+  file: string;
   originalFileName: string;
   mimeType: string;
-  file: string;
-  type: 'POSTER';
-}
+  type: string;
+};
 
-export interface Festival {
+export type FestivalInfo = {
   subId: string;
   name: string;
   addr: string;
   startDate: string;
   endDate: string;
-  festivalStatus: 'BEFORE' | '';
+  festivalStatus: 'BEFORE' | 'PENDING' | 'AFTER';
   description: string;
+  festivalFiles: FestivalImage[];
   url: string;
-  festivalFiles: ImageFile[];
-}
-
-export interface LineUpDtos {
-  subId: string;
-  title: string;
-  description: string;
-  startDate: string;
-  endDate: string;
-  lineUpFileDto: {
-    originalFileName: string;
-    mimeType: string;
-    file: string;
-  };
-}
-
-export interface LineUp {
-  subId: string;
-  name: string;
-  startDate: string;
-  endDate: string;
-  location: string;
-  description: string;
-  concertStatus: 'PROCESS';
-  lineUpDtos: LineUpDtos[];
-}
-
-export interface FestivalLineup extends Festival {
-  concerts: LineUp[];
-}
+};

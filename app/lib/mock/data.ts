@@ -1,6 +1,6 @@
-import { Festival } from '@/app/lib/types';
+import { FestivalInfo } from '@/app/lib/types';
 
-export const festivalLinupes: Festival[] = [
+export const festivalLinupes: FestivalInfo[] = [
   {
     subId: '',
     name: '서울시립대학교',

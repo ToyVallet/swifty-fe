@@ -1,6 +1,6 @@
 import parserDate from '@/app/lib/utils/parser/format-date';
 import { Link } from '@lib/navigation';
-import { Festival } from '@lib/types';
+import { FestivalInfo } from '@lib/types';
 import Image from 'next/image';
 
 export default function HeroTile({
@@ -10,7 +10,7 @@ export default function HeroTile({
   description,
   festivalFiles,
   priority = false,
-}: Festival & { priority?: boolean }) {
+}: FestivalInfo & { priority?: boolean }) {
   return (
     <Link href={'#'} className="relative flex-[0_0_100%] overflow-hidden">
       <div className="aspect-square relative h-full w-full">
