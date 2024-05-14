@@ -1,4 +1,5 @@
 import { get } from '@/app/api';
+import Tile from '@/app/components/common/carousel/tile';
 import { API_ROUTES } from '@/app/lib/constants';
 import { LineupInfo } from '@app/[locale]/(back-nav)/lineup/page';
 import { getTranslations } from 'next-intl/server';
@@ -27,7 +28,11 @@ export default async function LineupTile({
           <TileHeader.SeeAll href="/lineup">{t('seeAll')}</TileHeader.SeeAll>
         </TileHeader>
         <div className="relative aspect-[3/4] w-full lg:min-h-[500px] lg:aspect-auto">
-          <Carousel lineups={lineups} />
+          <Carousel>
+            {lineups.map((lineup, idx) => (
+              <Tile key={idx} {...lineup} />
+            ))}
+          </Carousel>
         </div>
       </div>
     );
