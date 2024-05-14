@@ -31,7 +31,7 @@ export default function HeroTile({
           <span>{description}</span>
         </div>
         <div className="flex text-sm font-semibold">
-          <span>{parserDate(startDate, endDate)}</span>
+          <span>{parserDate(startDate, endDate, 'ko')}</span>
         </div>
       </div>
     </Link>

@@ -1,6 +1,35 @@
-export default function formatDate(start: string, end: string) {
-  const start_day = start.split('-');
-  const end_day = end.split('-');
+import dayjs from 'dayjs';
+import 'dayjs/locale/en';
+import 'dayjs/locale/ko';
 
-  return `${start_day[0]}년 ${start_day[1]}월 ${start_day[2]}일 - ${end_day[2]}일`;
+const format = {
+  ko: {
+    year: 'YYYY년 MM월 DD일',
+    month: 'MM월 DD일',
+    day: 'DD일',
+  },
+  en: {
+    year: 'MMMM DD, YYYY',
+    month: 'MMMM DD',
+    day: 'DD',
+  },
+};
+
+export default function formatDate(
+  startDate: string,
+  endDate: string,
+  locale: 'en' | 'ko',
+) {
+  dayjs.locale(locale);
+  const start_date = dayjs(startDate);
+  const end_date = dayjs(endDate);
+
+  if (start_date.year() === end_date.year()) {
+    if (start_date.month() === end_date.month()) {
+      return `${start_date.format(format[locale].year)} - ${end_date.format(format[locale].day)}`;
+    } else {
+      return `${start_date.format(format[locale].year)} - ${end_date.format(format[locale].month)}`;
+    }
+  }
+  return `${start_date.format(format[locale].year)} - ${end_date.format(format[locale].year)}`;
 }
