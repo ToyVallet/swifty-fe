@@ -22,8 +22,8 @@
   "Home": {
     "description": "단국대학교 2024 대동제"
   },
-  "LineupTile": {
-    "title": "라인업 알아보기",
+  "FestivalTile": {
+    "title": "장르별 티켓 랭킹",
     "seeAll": "더보기"
   },
   "TicketTile": {

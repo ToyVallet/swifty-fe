@@ -10,13 +10,12 @@ export default async function FestivalTile({
 }) {
   try {
     //TODO: lineup -> festival
-    const t = await getTranslations('LineupTile');
+    const t = await getTranslations('FestivalTile');
 
     return (
       <div className="w-full lg:max-w-full">
         <TileHeader>
           <TileHeader.Head>{t('title')}</TileHeader.Head>
-          <TileHeader.SeeAll href="/lineup">{t('seeAll')}</TileHeader.SeeAll>
         </TileHeader>
         <Carousel festivals={festivals} />
       </div>

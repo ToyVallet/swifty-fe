@@ -10,7 +10,7 @@ export default function TileHeader({ children }: PropsWithChildren) {
 }
 
 function Head({ children }: PropsWithChildren) {
-  return <h3 className="text-2xl font-bold">{children}</h3>;
+  return <h3 className="text-xl font-bold">{children}</h3>;
 }
 
 TileHeader.Head = Head;
