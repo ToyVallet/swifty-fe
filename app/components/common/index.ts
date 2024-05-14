@@ -12,4 +12,4 @@ export { default as IntlProvider } from './intl-provider';
 export * from './animated';
 export { default as BackButton } from './back-button';
 export { default as Hero } from './hero';
-export { default as HeroCarousel } from './hero/hero-carousel';
+export { default as HeroTile } from './hero/hero-tile';

@@ -1,5 +1,5 @@
 import { festivalLinupes } from '@/app/lib/mock/data';
-import { AdBanner, Hero, HeroCarousel } from '@components/common';
+import { AdBanner, Carousel, Hero, HeroTile } from '@components/common';
 import {
   LineupTile,
   MenuTiles,
@@ -15,8 +15,13 @@ export default async function Home() {
     <div className="mb-20 flex flex-col gap-4 lg:mx-auto lg:max-w-full lg:gap-8">
       <NeedReverificationTile />
       <Hero>
-        <HeroCarousel lineups={festivalLinupes} />
+        <Carousel hasIndicator>
+          {festivalLinupes.map((fetsival) => (
+            <HeroTile key={fetsival.name} {...fetsival} />
+          ))}
+        </Carousel>
       </Hero>
+
       <AdBanner />
       <MenuTiles />
     </div>
