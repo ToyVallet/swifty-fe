@@ -1,26 +1,29 @@
 'use client';
 
-import { type LineupInfo } from '@page/(back-nav)/lineup/page';
-import useEmblaCarousel from 'embla-carousel-react';
 import React from 'react';
-
+import useEmblaCarousel from 'embla-carousel-react';
 import IntlProvider from '../intl-provider';
 import Tile from './tile';
+import { FestivalInfo } from '@/app/[locale]/(back-nav)/festival/actions';
 
 type CarouselProps = {
-  lineups: LineupInfo[];
+  festivals: FestivalInfo[];
 };
 
-export default function Carousel({ lineups }: CarouselProps) {
+export default function Carousel({ festivals }: CarouselProps) {
   const [emblaRef] = useEmblaCarousel();
 
   return (
     <IntlProvider>
-      <div className="absolute left-0 right-0 lg:max-w-[600px]" ref={emblaRef}>
-        <div className="flex gap-3 lg:gap lg:max-w-[600px]">
-          {lineups.map((tile, index) => (
-            <Tile key={index} priority={index === 0} {...tile} />
-          ))}
+      <div className="overflow-hidden bg-bg" ref={emblaRef}>
+        <div className="flex flex-row gap-x-3 lg:gap-x-6 text-white">
+          {festivals.map((festival, index) =>
+            <Tile
+              key={festival.subId}
+              priority={index === 0}
+              {...festival}
+            />
+          )}
         </div>
       </div>
     </IntlProvider>
