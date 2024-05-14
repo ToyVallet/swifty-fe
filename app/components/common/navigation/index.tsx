@@ -28,7 +28,7 @@ export default function Navigation({
       <If condition={hasBackButton}>
         <If.Then>
           <BackButton className="text-white font-bold text-base flex items-center gap-0.5">
-            <IoArrowBackOutline size={25} className={'text-white'} />
+            <IoArrowBackOutline size={25} className="text-white" />
             {title}
           </BackButton>
           {isLogo && (
