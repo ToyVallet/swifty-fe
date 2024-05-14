@@ -3,7 +3,7 @@ import {
   MenuTiles,
   NeedReverificationTile,
 } from '@components/home';
-import FestivalTile from '@/app/components/home/festival-tile';
+import { FestivalTile } from '@/app/components/home';
 import { getAllDummyFestivalInfo } from '@/app/[locale]/(back-nav)/festival/actions';
 
 export default async function Home() {
