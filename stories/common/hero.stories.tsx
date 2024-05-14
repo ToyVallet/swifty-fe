@@ -1,6 +1,6 @@
 import HeroTile from '@/app/components/common/hero/hero-tile';
 import { festivalLinupes } from '@/app/lib/mock/data';
-import { Hero, HeroCarousel } from '@components/common';
+import { Hero } from '@components/common';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Hero> = {
@@ -19,17 +19,6 @@ export const Default: Story = {
     return (
       <Hero>
         <div>test</div>
-      </Hero>
-    );
-  },
-};
-
-export const Hero_Carousel: Story = {
-  args: {},
-  render: () => {
-    return (
-      <Hero>
-        <HeroCarousel lineups={festivalLinupes} />
       </Hero>
     );
   },
