@@ -36,7 +36,6 @@ const preview: Preview = {
           <IntlProvider locale="ko">
             <div
               style={{
-                paddingTop: '20 10',
                 height: '80dvh',
                 width: '50dvw',
               }}

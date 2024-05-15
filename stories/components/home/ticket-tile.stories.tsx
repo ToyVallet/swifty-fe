@@ -6,7 +6,7 @@ const meta: Meta<typeof TicketTile> = {
   component: TicketTile,
   argTypes: {},
   parameters: {},
-  tags: ['autoDocs'],
+  tags: ['autodocs'],
 };
 
 export default meta;

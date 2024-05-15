@@ -4,7 +4,7 @@ import { PropsWithChildren } from 'react';
 export default function BackNavLayout({ children }: PropsWithChildren) {
   return (
     <>
-      <Navigation hasBackButton />
+      <Navigation variant="back" />
       {children}
     </>
   );

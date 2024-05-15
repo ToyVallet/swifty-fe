@@ -8,7 +8,7 @@ const meta: Meta<typeof SideNav> = {
   component: SideNav,
   argTypes: {},
   parameters: {},
-  tags: ['autoDocs'],
+  tags: ['autodocs'],
 };
 
 export default meta;

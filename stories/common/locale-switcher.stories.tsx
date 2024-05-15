@@ -14,7 +14,6 @@ const meta: Meta<typeof LocaleSwitcher> = {
       },
     },
   },
-  tags: ['autoDocs'],
 };
 
 export default meta;

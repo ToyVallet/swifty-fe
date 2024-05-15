@@ -11,7 +11,7 @@ const meta: Meta<typeof Card> = {
     to: { control: 'date' },
   },
   component: Card,
-  tags: ['autoDocs'],
+  tags: ['autodocs'],
 };
 
 export default meta;
