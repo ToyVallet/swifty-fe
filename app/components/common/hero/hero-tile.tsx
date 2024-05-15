@@ -26,7 +26,7 @@ export default function HeroTile({
       </div>
 
       <div className="absolute bottom-[-16px] left-5 flex h-1/3 gap-y-1.5 flex-col rounded-2xl text-white">
-        <div className="text-xl font-semibold">
+        <div className="flex flex-col text-xl font-semibold gap-1.5">
           <h4>{name}</h4>
           <span>{description}</span>
         </div>
