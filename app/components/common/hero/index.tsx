@@ -3,16 +3,16 @@
 import { cn } from '@/app/lib/utils';
 
 interface Prop {
-  isCarousel?: boolean;
+  variant?: 'carousel' | 'image';
   children: React.ReactNode;
 }
 
-export default function Hero({ children, isCarousel = true }: Prop) {
+export default function Hero({ children, variant = 'carousel' }: Prop) {
   return (
     <section
       className={cn(
         'relative overflow-hidden',
-        isCarousel ? 'h-[447px]' : 'h-[339px]',
+        variant === 'carousel' ? 'h-[447px]' : 'h-[339px]',
       )}
     >
       {children}

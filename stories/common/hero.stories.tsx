@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Hero> = {
   title: 'COMMON/Hero',
-  argTypes: { isCarousel: { control: 'boolean' } },
+  argTypes: { variant: { control: 'radio', options: ['carousel', 'image'] } },
   component: Hero,
   tags: ['autodocs'],
 };
@@ -25,10 +25,12 @@ export const Default: Story = {
 };
 
 export const Hero_Tile: Story = {
-  args: {},
-  render: () => {
+  args: {
+    variant: 'image',
+  },
+  render: (args) => {
     return (
-      <Hero>
+      <Hero {...args}>
         <HeroTile {...festivalLinupes[0]} />
       </Hero>
     );
@@ -36,10 +38,12 @@ export const Hero_Tile: Story = {
 };
 
 export const Hero_Carousel: Story = {
-  args: {},
-  render: () => {
+  args: {
+    variant: 'carousel',
+  },
+  render: (args) => {
     return (
-      <Hero>
+      <Hero {...args}>
         <Carousel hasIndicator>
           {festivalLinupes.map((fetsival) => (
             <HeroTile key={fetsival.name} {...fetsival} />
