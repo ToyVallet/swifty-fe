@@ -6,13 +6,14 @@ export type FestivalImage = {
 };
 
 export type FestivalInfo = {
-  subId: string;
+  id: string;
   name: string;
   addr: string;
   startDate: string;
   endDate: string;
   festivalStatus: 'BEFORE' | 'PENDING' | 'AFTER';
   description: string;
-  festivalFiles: FestivalImage[];
+  festivalFiles?: FestivalImage[];
+  festivalimage?: string;
   url: string;
 };

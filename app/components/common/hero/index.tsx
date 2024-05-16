@@ -9,7 +9,7 @@ export default function Hero({ children, variant = 'carousel' }: HeroProps) {
   return (
     <section
       className={cn(
-        'relative overflow-hidden',
+        'relative overflow-hidden flex items-center justify-center',
         variant === 'carousel' ? 'h-[447px]' : 'h-[339px]',
       )}
     >

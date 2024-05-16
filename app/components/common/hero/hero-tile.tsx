@@ -1,22 +1,27 @@
-import parserDate from '@/app/lib/utils/parser/format-date';
 import { Link } from '@lib/navigation';
 import { FestivalInfo } from '@lib/types';
+import formatDate from '@lib/utils/parser/format-date';
 import Image from 'next/image';
 
 export default function HeroTile({
+  id,
   name,
   startDate,
   endDate,
   description,
-  festivalFiles,
+  festivalimage,
+  url,
   priority = false,
 }: FestivalInfo & { priority?: boolean }) {
   return (
-    <Link href={'#'} className="relative flex-[0_0_100%] overflow-hidden">
+    <Link
+      href={`/festival/${id}`}
+      className="relative flex-[0_0_100%] overflow-hidden"
+    >
       <div className="aspect-square relative h-full w-full">
         <Image
           priority={priority}
-          src={festivalFiles[0].file}
+          src={festivalimage ?? ''}
           alt={name}
           className="object-cover w-full h-full"
           quality={100}
@@ -31,7 +36,7 @@ export default function HeroTile({
           <span>{description}</span>
         </div>
         <div className="flex text-sm font-semibold">
-          <span>{parserDate(startDate, endDate, 'ko')}</span>
+          <span>{formatDate(startDate, endDate, 'ko')}</span>
         </div>
       </div>
     </Link>
