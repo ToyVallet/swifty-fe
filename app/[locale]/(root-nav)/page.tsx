@@ -21,9 +21,9 @@ export default async function Home() {
           ))}
         </Carousel>
       </Hero>
-
-      <AdBanner />
-      <MenuTiles />
+      <div className="px-4">
+        <AdBanner />
+      </div>
     </div>
   );
 }
