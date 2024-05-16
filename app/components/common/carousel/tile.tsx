@@ -5,6 +5,8 @@ import { useFormatter } from 'next-intl';
 import Image from 'next/image';
 import { FiCalendar, FiClock, FiHeart } from 'react-icons/fi';
 
+import FadeOverlay from './fade-overlay';
+
 export default function Tile({
   images,
   singer,
@@ -34,6 +36,7 @@ export default function Tile({
           blurDataURL={blurDataUrl}
           fill
         />
+        <FadeOverlay />
       </div>
 
       <div className="absolute bottom-4 left-4 right-4 flex h-1/3 flex-col justify-between rounded-2xl bg-neutral-700 bg-opacity-0 bg-clip-padding p-4 text-white shadow-lg backdrop-blur-xl backdrop-filter">

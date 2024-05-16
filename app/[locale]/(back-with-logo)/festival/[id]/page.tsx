@@ -1,9 +1,10 @@
-import { TileHeader, TileInfo } from '@/app/components/common';
-import formatDate from '@/app/lib/utils/parser/format-date';
+import { TileHeader, TileInfo } from '@components/common';
 import { Hero } from '@components/common';
 import { MenuTiles } from '@components/common';
+import FadeOverlay from '@components/common/carousel/fade-overlay';
 import { LineUp, TopCard } from '@components/festival';
 import { Locale, type Params } from '@lib/types';
+import formatDate from '@lib/utils/parser/format-date';
 import Image from 'next/image';
 import { BsBellFill } from 'react-icons/bs';
 import { TiStarFullOutline } from 'react-icons/ti';
@@ -49,14 +50,15 @@ export default async function FestivalHomePage({
           width={500}
           height={500}
         />
+        <FadeOverlay />
       </Hero>
       <main className="px-5 flex flex-col gap-10">
         <TopCard
           title={festivalInfo.name}
           description={festivalInfo.description}
           period={formatDate(
-            festivalInfo.startDate,
-            festivalInfo.endDate,
+            festivalInfo.startdate,
+            festivalInfo.enddate,
             locale,
           )}
         />

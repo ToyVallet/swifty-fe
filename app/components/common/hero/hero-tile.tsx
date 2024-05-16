@@ -6,8 +6,8 @@ import Image from 'next/image';
 export default function HeroTile({
   id,
   name,
-  startDate,
-  endDate,
+  startdate,
+  enddate,
   description,
   festivalimage,
   url,
@@ -18,7 +18,7 @@ export default function HeroTile({
       href={`/festival/${id}`}
       className="relative flex-[0_0_100%] overflow-hidden"
     >
-      <div className="aspect-square relative h-full w-full">
+      <div className="aspect-square relative h-full w-full flex items-center justify-center">
         <Image
           priority={priority}
           src={festivalimage ?? ''}
@@ -36,7 +36,7 @@ export default function HeroTile({
           <span>{description}</span>
         </div>
         <div className="flex text-sm font-semibold">
-          <span>{formatDate(startDate, endDate, 'ko')}</span>
+          <span>{formatDate(startdate, enddate, 'ko')}</span>
         </div>
       </div>
     </Link>

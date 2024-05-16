@@ -9,8 +9,8 @@ export type FestivalInfo = {
   id: string;
   name: string;
   addr: string;
-  startDate: string;
-  endDate: string;
+  startdate: string;
+  enddate: string;
   festivalStatus: 'BEFORE' | 'PENDING' | 'AFTER';
   description: string;
   festivalFiles?: FestivalImage[];
