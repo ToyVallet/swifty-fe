@@ -45,6 +45,7 @@ const nextConfig = {
       { protocol: 'https', hostname: 'scontent.cdninstagram.com' },
       { protocol: 'https', hostname: 'sgyoonseul24.notion.site' },
       { protocol: 'https', hostname: 'scontent-den2-1.cdninstagram.com' },
+      { protocol: 'https', hostname: 'www.danfesta.com' },
     ],
   },
 };

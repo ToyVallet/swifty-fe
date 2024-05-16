@@ -2,19 +2,20 @@ import { TileHeader, TileInfo } from '@components/common';
 import { Hero } from '@components/common';
 import { MenuTiles } from '@components/common';
 import FadeOverlay from '@components/common/carousel/fade-overlay';
-import { LineUp, TopCard } from '@components/festival';
+import { LineUpSection, TopCard } from '@components/festival';
 import { Locale, type Params } from '@lib/types';
 import formatDate from '@lib/utils/parser/format-date';
 import Image from 'next/image';
 import { BsBellFill } from 'react-icons/bs';
 import { TiStarFullOutline } from 'react-icons/ti';
 
-import { getLineupInfos } from './action';
+import { getFestivalInfos, getLineups } from './action';
 
 export default async function FestivalHomePage({
   params: { id, locale },
 }: Params<{ id: string; locale: Locale }>) {
-  const festivalInfo = await getLineupInfos(Number(id));
+  const festivalInfo = await getFestivalInfos(Number(id));
+  const lineups = await getLineups(Number(id));
 
   const tiles: TileInfo[] = [
     {
@@ -42,7 +43,7 @@ export default async function FestivalHomePage({
   ];
 
   return (
-    <div>
+    <div className="mb-[90px]">
       <Hero variant="image">
         <Image
           src={festivalInfo.festivalimage ?? ''}
@@ -63,7 +64,7 @@ export default async function FestivalHomePage({
           )}
         />
         <MenuTiles tiles={tiles} />
-        <LineUp />
+        <LineUpSection lineups={lineups} />
       </main>
     </div>
   );

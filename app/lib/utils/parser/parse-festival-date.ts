@@ -8,6 +8,8 @@ export default function parseFestivalDate(date: FestivalDate): number {
       return 2;
     case 'THIRD_DAY':
       return 3;
+    case 'FOURTH_DAY':
+      return 4;
     default:
       throw new Error('Invalid date');
   }

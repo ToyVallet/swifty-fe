@@ -1,9 +1,13 @@
-import Tile from '@/app/components/common/carousel/tile';
 import { Carousel } from '@components/common';
+import Tile from '@components/common/carousel/tile';
 
 import { getLineupInfoByDay } from './actions';
 
-export type FestivalDate = 'FIRST_DAY' | 'SECOND_DAY' | 'THIRD_DAY';
+export type FestivalDate =
+  | 'FIRST_DAY'
+  | 'SECOND_DAY'
+  | 'THIRD_DAY'
+  | 'FOURTH_DAY';
 
 export type LineupImage = {
   url: string;

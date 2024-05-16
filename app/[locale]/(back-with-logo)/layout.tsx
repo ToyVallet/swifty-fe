@@ -1,4 +1,4 @@
-import { Navigation } from '@/app/components/common';
+import { Footer, Navigation } from '@/app/components/common';
 import { PropsWithChildren } from 'react';
 
 export default function BackNavLayout({ children }: PropsWithChildren) {
@@ -6,6 +6,7 @@ export default function BackNavLayout({ children }: PropsWithChildren) {
     <>
       <Navigation variant="back-with-logo" />
       {children}
+      <Footer />
     </>
   );
 }

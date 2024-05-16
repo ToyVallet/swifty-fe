@@ -1,6 +1,5 @@
 'use client';
 
-import { useRouter } from '@lib/navigation';
 import { cn } from '@lib/utils';
 import { Dayjs } from 'dayjs';
 import 'dayjs/locale/ko';
@@ -12,6 +11,7 @@ type DateBlockProps = {
   className?: string;
   disabled?: boolean;
   selected?: boolean;
+  onClick?: () => void;
 };
 
 export default function DateBlock({
@@ -19,14 +19,9 @@ export default function DateBlock({
   className,
   disabled,
   selected,
+  onClick,
 }: DateBlockProps) {
   const locale = useLocale();
-  const router = useRouter();
-
-  const onClick = () => {
-    if (disabled) return;
-    router.replace(`/lineup?day=`);
-  };
 
   return (
     <motion.div
