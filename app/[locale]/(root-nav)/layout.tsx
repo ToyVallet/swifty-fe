@@ -6,7 +6,6 @@ export default function RootNavLayout({ children }: PropsWithChildren) {
     <>
       <Navigation variant="main" />
       {children}
-      <FloatingTicket />
       <Footer />
     </>
   );

@@ -13,21 +13,3 @@ export type Params<P extends Record<string, any>> = {
 export type SearchParams<P extends Record<string, any>> = {
   searchParams: P;
 };
-export type FestivalImage = {
-  file: string;
-  originalFileName: string;
-  mimeType: string;
-  type: string;
-};
-
-export type FestivalInfo = {
-  subId: string;
-  name: string;
-  addr: string;
-  startDate: string;
-  endDate: string;
-  festivalStatus: 'BEFORE' | 'PENDING' | 'AFTER';
-  description: string;
-  festivalFiles: FestivalImage[];
-  url: string;
-};
