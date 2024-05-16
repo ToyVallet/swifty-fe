@@ -1,12 +1,11 @@
-import { festivalLinupes } from '@/app/lib/mock/data';
+import FestivalTiles from '@/app/components/home/festival-tile';
 import { AdBanner, Link, Navigation } from '@components/common';
-import { FestivalTiles } from '@components/home';
 
-import { getAllLineupInfo } from '../(back-nav)/lineup/actions';
+import { getLineupInfos } from './action';
 
 export default async function Home() {
-  //const lineups = await getAllLineupInfo();
-
+  const festivalLinupes = await getLineupInfos();
+  console.log(festivalLinupes);
   return (
     <>
       <Navigation variant="main" />

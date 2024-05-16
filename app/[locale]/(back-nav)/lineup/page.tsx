@@ -4,7 +4,11 @@ import { Carousel } from '@components/common';
 
 import { getLineupInfoByDay } from './actions';
 
-export type FestivalDate = 'FIRST_DAY' | 'SECOND_DAY' | 'THIRD_DAY';
+export type FestivalDate =
+  | 'FIRST_DAY'
+  | 'SECOND_DAY'
+  | 'THIRD_DAY'
+  | 'FOURTH_DAY';
 
 export type LineupImage = {
   url: string;

@@ -1,21 +1,21 @@
 import { Link } from '@/app/components/common';
 import { FestivalInfo } from '@/app/lib/types';
 import NoLineup from '@images/lineup/no-lineup-image.webp';
+import dayjs from 'dayjs';
 import Image from 'next/image';
+
+import FadeOverlay from './fade-overlay';
 
 export default function Tile({
   name,
   addr,
-  startDate,
-  endDate,
-  festivalFiles,
+  startdate,
+  enddate,
+  festivalimage,
   description,
   priority = false,
 }: FestivalInfo & { priority?: boolean }) {
-  const imageUrl = festivalFiles[0].file;
-  const altText = festivalFiles[0].originalFileName;
-  const period = `${startDate} ~ ${endDate}`.replaceAll('-', '.');
-
+  const period = `${dayjs(startdate).format('YYYY-MM-DD')} - ${dayjs(enddate).format('YYYY-MM-DD')}`;
   return (
     <Link href="#">
       <div className="bg-bgBlack w-[150px] text-white ">
@@ -23,10 +23,11 @@ export default function Tile({
           <Image
             className="absolute object-cover"
             priority={priority}
-            src={imageUrl}
-            alt={altText}
+            src={festivalimage ? festivalimage : NoLineup}
+            alt={name}
             fill
           />
+          <FadeOverlay />
         </figure>
         <div className="pt-[10px] flex flex-col items-between">
           <div className="h-12 w-40 font-bold truncate">

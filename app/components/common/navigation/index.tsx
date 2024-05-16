@@ -1,4 +1,4 @@
-import { BackButton, Link } from '@components/common/';
+import { BackButton, Link } from '@components/common';
 import LogoLink from '@components/common/navigation/logo-link';
 import Magnifier from '@icons/magnifier.svg';
 import { cn } from '@lib/utils';
@@ -20,7 +20,7 @@ export default function Navigation({ title, variant }: Props) {
         <>
           <LogoLink />
           <Link href="#" className="w-auto h-auto flex items-center">
-            <Magnifier fill={'white'} />
+            <Magnifier fill="white" />
           </Link>
         </>
       )}

@@ -1,5 +1,3 @@
-'use client';
-
 import { festivalLinupes } from '@/app/lib/mock/data';
 import { Carousel, HeroTile } from '@components/common';
 import type { Meta, StoryObj } from '@storybook/react';
@@ -24,6 +22,7 @@ const meta: Meta<typeof Carousel> = {
 };
 
 export default meta;
+
 type Story = StoryObj<typeof Carousel>;
 
 export const Default: Story = {
