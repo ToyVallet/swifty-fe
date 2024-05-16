@@ -13,7 +13,7 @@ export default function Navigation({ title, variant }: Props) {
   return (
     <nav
       className={cn(
-        'z-50 flex w-full justify-between items-center px-5 h-[50px] py-[11px] bg-gradient-header fixed top-0 left-0 lg:w-[800px]',
+        'z-50 flex w-full justify-between items-center px-5 h-[50px] py-[11px] bg-gradient-header fixed top-0 lg:w-[430px] max-w-[430px]',
       )}
     >
       {variant === 'main' && (
