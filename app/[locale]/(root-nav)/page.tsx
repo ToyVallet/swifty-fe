@@ -5,7 +5,7 @@ import { getLineupInfos } from './action';
 
 export default async function Home() {
   const festivalLinupes = await getLineupInfos();
-  console.log(festivalLinupes);
+
   return (
     <>
       <Navigation variant="main" />
