@@ -15,7 +15,7 @@ export default async function FestivalTile({
     const t = await getTranslations('FestivalTile');
 
     return (
-      <div className="flex flex-col gap-5 w-full text-white">
+      <div className="flex flex-col gap-5 w-full text-white bg-bgBlack">
         <TileHeader>
           <TileHeader.Head>{t('title')}</TileHeader.Head>
         </TileHeader>
