@@ -1,13 +1,11 @@
-'use client';
+import { cn } from '@lib/utils';
+import { PropsWithChildren } from 'react';
 
-import { cn } from '@/app/lib/utils';
-
-interface Prop {
+type HeroProps = PropsWithChildren<{
   variant?: 'carousel' | 'image';
-  children: React.ReactNode;
-}
+}>;
 
-export default function Hero({ children, variant = 'carousel' }: Prop) {
+export default function Hero({ children, variant = 'carousel' }: HeroProps) {
   return (
     <section
       className={cn(
@@ -16,7 +14,7 @@ export default function Hero({ children, variant = 'carousel' }: Prop) {
       )}
     >
       {children}
-      <div className="bg-bgBlack absolute bottom-0 w-full max-h-10 h-[15%] z-10 rounded-t-[22px]"></div>
+      <div className="bg-bgBlack absolute bottom-0 w-full max-h-10 h-[15%] z-10 rounded-t-[22px]" />
     </section>
   );
 }

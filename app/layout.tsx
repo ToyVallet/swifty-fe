@@ -28,10 +28,11 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0c0c0c' },
-  ],
+  themeColor: '#0c0c0c',
+  // [
+  // { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+  // { media: '(prefers-color-scheme: dark)', color: '#0c0c0c' },
+  // ],
 };
 
 export default function RootLayout({
@@ -39,8 +40,8 @@ export default function RootLayout({
   params: { locale },
 }: PropsWithChildren<Params<{ locale: string }>>) {
   return (
-    <html lang={locale}>
-      <body className={'font-Pretendard'}>
+    <html lang={locale ?? 'ko'}>
+      <body className="font-Pretendard bg-bgBlack">
         <Providers>{children}</Providers>
       </body>
     </html>

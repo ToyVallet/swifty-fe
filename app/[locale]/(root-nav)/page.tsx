@@ -1,10 +1,10 @@
-import { festivalLinupes } from '@/app/lib/mock/data';
 import { AdBanner, Carousel, Hero, HeroTile } from '@components/common';
 import {
   LineupTile,
   MenuTiles,
   NeedReverificationTile,
 } from '@components/home';
+import { festivalLinupes } from '@lib/mock/data';
 
 import { getAllLineupInfo } from '../(back-nav)/lineup/actions';
 

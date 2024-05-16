@@ -2,6 +2,8 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/en';
 import 'dayjs/locale/ko';
 
+import { Locale } from '../../types';
+
 const format = {
   ko: {
     year: 'YYYY년 MM월 DD일',
@@ -18,7 +20,7 @@ const format = {
 export default function formatDate(
   startDate: string,
   endDate: string,
-  locale: 'en' | 'ko',
+  locale: Locale,
 ) {
   dayjs.locale(locale);
   const start_date = dayjs(startDate);
