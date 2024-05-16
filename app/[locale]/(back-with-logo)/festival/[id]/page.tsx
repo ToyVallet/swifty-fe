@@ -1,9 +1,7 @@
-import { TileHeader, TileInfo } from '@components/common';
-import { Hero } from '@components/common';
-import { MenuTiles } from '@components/common';
+import { Hero, MenuTiles, TileHeader, TileInfo } from '@components/common';
 import FadeOverlay from '@components/common/carousel/fade-overlay';
 import { LineUpSection, TopCard } from '@components/festival';
-import { Locale, type Params } from '@lib/types';
+import type { Locale, Params } from '@lib/types';
 import formatDate from '@lib/utils/parser/format-date';
 import Image from 'next/image';
 import { BsBellFill } from 'react-icons/bs';
