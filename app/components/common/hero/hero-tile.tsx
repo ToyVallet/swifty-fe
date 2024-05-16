@@ -1,3 +1,4 @@
+import NoLineup from '@images/lineup/no-lineup-image.webp';
 import { Link } from '@lib/navigation';
 import { FestivalInfo } from '@lib/types';
 import formatDate from '@lib/utils/parser/format-date';
@@ -21,10 +22,11 @@ export default function HeroTile({
       <div className="aspect-square relative h-full w-full flex items-center justify-center">
         <Image
           priority={priority}
-          src={festivalimage ?? ''}
+          src={festivalimage ? festivalimage : NoLineup}
           alt={name}
           className="object-cover"
           quality={100}
+          sizes="auto"
           fill
         />
         <div className="absolute bottom-0 left-0 right-0 top-0 bg-gradient-hero-carousel" />
