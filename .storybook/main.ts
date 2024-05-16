@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/nextjs';
+import path from 'path';
 
 const config: StorybookConfig = {
   stories: [
@@ -26,6 +27,7 @@ const config: StorybookConfig = {
   features: {
     experimentalRSC: true,
   },
+  staticDirs: ['../public'],
   // svg
   webpackFinal: async (config) => {
     const imageRule = config.module?.rules?.find((rule) => {

@@ -34,12 +34,7 @@ const preview: Preview = {
       return (
         <AppRouterContext.Provider value={mockRouter}>
           <IntlProvider locale="ko">
-            <div
-              style={{
-                height: '80dvh',
-                width: '50dvw',
-              }}
-            >
+            <div>
               <Toaster position="top-center" />
               <Story />
             </div>
