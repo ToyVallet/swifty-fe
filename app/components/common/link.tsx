@@ -18,6 +18,7 @@ export default function Link({
   href,
   className,
   variant = 'text',
+  ...props
 }: LinkProps) {
   return variant === 'text' ? (
     <IntlLink
@@ -34,6 +35,7 @@ export default function Link({
       <IntlLink
         href={href}
         className="w-full h-full flex justify-center items-center"
+        scroll={props.scroll}
       >
         {children}
       </IntlLink>

@@ -23,7 +23,7 @@ export default function HeroTile({
           priority={priority}
           src={festivalimage ?? ''}
           alt={name}
-          className="object-cover w-full h-full"
+          className="object-cover"
           quality={100}
           fill
         />
