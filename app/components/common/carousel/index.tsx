@@ -22,14 +22,16 @@ type CarouselProps = {
   children: React.ReactNode;
   hasIndicator?: boolean;
   className?: string;
+  align?: 'center' | 'start' | 'end';
 };
 
 function Carousel({
   children,
   className,
   hasIndicator = false,
+  align = 'start',
 }: CarouselProps) {
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align });
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {

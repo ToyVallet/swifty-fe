@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 
 export default function TileHeader({ children }: PropsWithChildren) {
   return (
-    <div className="w-full flex justify-between items-end mb-4 lg:max-w-full lg:w-full">
+    <div className="w-full flex justify-between items-end lg:max-w-full lg:w-full">
       {children}
     </div>
   );

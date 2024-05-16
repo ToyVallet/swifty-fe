@@ -1,3 +1,4 @@
+import { Link } from '@/app/components/common';
 import { FestivalInfo } from '@/app/lib/types';
 import NoLineup from '@images/lineup/no-lineup-image.webp';
 import Image from 'next/image';
@@ -16,26 +17,28 @@ export default function Tile({
   const period = `${startDate} ~ ${endDate}`.replaceAll('-', '.');
 
   return (
-    <div className="bg-bgBlack w-[150px] text-white ">
-      <figure className="relative aspect-[3/4]">
-        <Image
-          className="absolute object-cover"
-          priority={priority}
-          src={imageUrl}
-          alt={altText}
-          fill
-        />
-      </figure>
-      <div className="pt-[10px] flex flex-col items-between">
-        <div className="h-12 w-40 lg:w-80 font-bold">
-          <h4>{name}</h4>
-          <p className="pt-1 truncate">{description}</p>
+    <Link href="#">
+      <div className="bg-bgBlack w-[150px] text-white ">
+        <figure className="relative aspect-[3/4]">
+          <Image
+            className="absolute object-cover"
+            priority={priority}
+            src={imageUrl}
+            alt={altText}
+            fill
+          />
+        </figure>
+        <div className="pt-[10px] flex flex-col items-between">
+          <div className="h-12 w-40 font-bold truncate">
+            <h4>{name}</h4>
+            <p className="pt-1 truncate">{description}</p>
+          </div>
+          <p className="text-sm mt-[7px]">{addr}</p>
+          <p className="text-gray-400 text-xs mt-[5px] gray-400 tracking-tight">
+            {period}
+          </p>
         </div>
-        <p className="text-sm mt-[7px]">{addr}</p>
-        <p className="text-gray-400 text-xs mt-[5px] gray-400 tracking-tight">
-          {period}
-        </p>
       </div>
-    </div>
+    </Link>
   );
 }

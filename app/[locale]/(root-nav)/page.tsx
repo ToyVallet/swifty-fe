@@ -1,10 +1,6 @@
 import { festivalLinupes } from '@/app/lib/mock/data';
-import { AdBanner, Carousel, Hero, HeroTile } from '@components/common';
-import {
-  LineupTile,
-  MenuTiles,
-  NeedReverificationTile,
-} from '@components/home';
+import { AdBanner } from '@components/common';
+import { FestivalTiles, NeedReverificationTile } from '@components/home';
 
 import { getAllLineupInfo } from '../(back-nav)/lineup/actions';
 
@@ -12,18 +8,10 @@ export default async function Home() {
   //const lineups = await getAllLineupInfo();
 
   return (
-    <div className="mb-20 flex flex-col gap-4 lg:mx-auto lg:max-w-full lg:gap-8">
+    <div className="mb-20 w-full flex flex-col gap-10 px-5 lg:mx-auto">
       <NeedReverificationTile />
-      <Hero>
-        <Carousel hasIndicator>
-          {festivalLinupes.map((fetsival) => (
-            <HeroTile key={fetsival.name} {...fetsival} />
-          ))}
-        </Carousel>
-      </Hero>
-      <div className="px-4">
-        <AdBanner />
-      </div>
+      <FestivalTiles festivals={festivalLinupes} />
+      <AdBanner src="/images/banner.png" />
     </div>
   );
 }
