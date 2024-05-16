@@ -1,9 +1,18 @@
+import { cn } from '@/app/lib/utils';
 import { Link } from '@components/common';
 import type { PropsWithChildren } from 'react';
 
-export default function TileHeader({ children }: PropsWithChildren) {
+export default function TileHeader({
+  children,
+  className,
+}: PropsWithChildren<{ className?: string }>) {
   return (
-    <div className="w-full flex justify-between items-end lg:max-w-full lg:w-full">
+    <div
+      className={cn(
+        'w-full flex justify-between items-end lg:max-w-full lg:w-full',
+        className,
+      )}
+    >
       {children}
     </div>
   );

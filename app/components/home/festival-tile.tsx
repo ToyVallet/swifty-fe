@@ -1,4 +1,3 @@
-import { Link } from '@/app/components/common';
 import Tile from '@/app/components/common/carousel/tile';
 import { FestivalInfo } from '@/app/lib/types';
 import { getTranslations } from 'next-intl/server';
@@ -6,32 +5,29 @@ import { getTranslations } from 'next-intl/server';
 import Carousel from '../common/carousel';
 import TileHeader from './tile-header';
 
-export default async function FestivalTile({
-  festivals,
-}: {
+interface Props {
   festivals: FestivalInfo[];
-}) {
+  variant?: 'carousel' | 'grid';
+  headerPosiion?: 'start' | 'center';
+}
+
+async function FestivalTiles({
+  festivals,
+  variant = 'carousel',
+  headerPosiion = 'start',
+}: Props) {
   try {
     const t = await getTranslations('FestivalTile');
 
     return (
       <div className="flex flex-col gap-5 w-full text-white bg-bgBlack">
-        <TileHeader>
+        <TileHeader
+          className={headerPosiion === 'center' ? 'justify-center' : ''}
+        >
           <TileHeader.Head>{t('title')}</TileHeader.Head>
         </TileHeader>
-        <Carousel className="gap-5">
-          {festivals.map((festival, idx) => (
-            <Tile key={idx} {...festival} />
-          ))}
-        </Carousel>
-        <Link
-          variant="outlined"
-          href={'/festivals'}
-          className="border-white"
-          scroll={false}
-        >
-          티켓 랭킹 전체보기
-        </Link>
+        {variant === 'carousel' && <FestivalCarousel festivals={festivals} />}
+        {variant === 'grid' && <FestivalGrid festivals={festivals} />}
       </div>
     );
   } catch (error) {
@@ -39,3 +35,25 @@ export default async function FestivalTile({
     return <span className="w-full text-neutral-500">{e.message}</span>;
   }
 }
+
+function FestivalCarousel({ festivals }: { festivals: Props['festivals'] }) {
+  return (
+    <Carousel className="gap-5">
+      {festivals.map((festival, idx) => (
+        <Tile key={idx} {...festival} />
+      ))}
+    </Carousel>
+  );
+}
+
+function FestivalGrid({ festivals }: { festivals: Props['festivals'] }) {
+  return (
+    <div className="w-full grid gap-5 grid-cols-2">
+      {festivals.map((festival, idx) => (
+        <Tile key={idx} {...festival} />
+      ))}
+    </div>
+  );
+}
+
+export default FestivalTiles;
