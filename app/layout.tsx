@@ -41,7 +41,7 @@ export default function RootLayout({
 }: PropsWithChildren<Params<{ locale: string }>>) {
   return (
     <html lang={locale ?? 'ko'}>
-      <body className="font-Pretendard bg-bgBlack">
+      <body className="font-Pretendard">
         <Providers>{children}</Providers>
       </body>
     </html>

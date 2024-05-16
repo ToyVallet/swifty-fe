@@ -2,7 +2,7 @@ import { TileHeader, TileInfo } from '@/app/components/common';
 import formatDate from '@/app/lib/utils/parser/format-date';
 import { Hero } from '@components/common';
 import { MenuTiles } from '@components/common';
-import { TopCard } from '@components/festival';
+import { LineUp, TopCard } from '@components/festival';
 import { Locale, type Params } from '@lib/types';
 import Image from 'next/image';
 import { BsBellFill } from 'react-icons/bs';
@@ -31,7 +31,7 @@ const tiles: TileInfo[] = [
     title: <TileHeader>라인업</TileHeader>,
     link: '/notice',
     icon: <BsBellFill size={17} />,
-    bgColor: 'bg-white',
+    bgColor: 'bg-white text-black',
   },
 ];
 
@@ -59,6 +59,7 @@ export default async function FestivalHomePage({
           )}
         />
         <MenuTiles tiles={tiles} />
+        <LineUp />
       </main>
     </div>
   );

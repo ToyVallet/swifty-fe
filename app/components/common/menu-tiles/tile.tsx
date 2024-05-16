@@ -12,7 +12,7 @@ export default function Tile({
   return (
     <div
       className={cn(
-        'rounded-xl h-full w-full border-[1px] border-neutral-300 dark:border-neutral-800 p-4 flex flex-col justify-between shadow-xl dark:shadow-none active:scale-[0.98] transition-transform duration-200 ease-in-out aspect-square lg:p-6 lg:text-2xl',
+        'rounded-xl h-full w-full border-[1px] border-neutral-300 dark:border-neutral-800 p-4 flex flex-col justify-between shadow-xl dark:shadow-none active:scale-[0.98] transition-transform duration-200 ease-in-out aspect-square',
         bgColor,
         textColor,
       )}
