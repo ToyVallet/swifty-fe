@@ -1,3 +1,4 @@
+import Tile from '@/app/components/common/carousel/tile';
 import { Carousel } from '@components/common';
 
 import { getLineupInfoByDay } from './actions';
@@ -26,7 +27,11 @@ export default async function LineupPage() {
 
   return (
     <div className="mb-20 flex flex-col gap-4 px-5">
-      <Carousel lineups={lineups} />
+      <Carousel>
+        {lineups.map((lineup, idx) => (
+          <Tile key={idx} {...lineup} />
+        ))}
+      </Carousel>
     </div>
   );
 }

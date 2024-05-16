@@ -1,6 +1,7 @@
 'use client';
 
-import { Carousel } from '@components/common';
+import { festivalLinupes } from '@/app/lib/mock/data';
+import { Carousel, HeroTile } from '@components/common';
 import TileComponent from '@components/common/carousel/tile';
 import { type LineupInfo } from '@page/(back-nav)/lineup/page';
 import type { Meta, StoryObj } from '@storybook/react';
@@ -92,6 +93,9 @@ const noLineups: LineupInfo[] = [
 const meta: Meta<typeof Carousel> = {
   title: 'COMMON/Carousel',
   component: Carousel,
+  argTypes: {
+    hasIndicator: { control: 'boolean' },
+  },
   tags: ['autodocs'],
 };
 
@@ -100,21 +104,35 @@ type Story = StoryObj<typeof Carousel>;
 
 export const Default: Story = {
   args: {
-    lineups: lineups,
-  },
-};
-
-export const No_Line_Up: Story = {
-  args: {
-    lineups: noLineups,
-  },
-};
-
-export const Tile: Story = {
-  args: {
-    lineups: lineups,
+    children: festivalLinupes.map((fetsival) => (
+      <HeroTile key={fetsival.name} {...fetsival} />
+    )),
   },
   render: (args) => {
-    return <TileComponent {...args.lineups[0]} />;
+    return (
+      <Carousel {...args}>
+        {festivalLinupes.map((fetsival) => (
+          <HeroTile key={fetsival.name} {...fetsival} />
+        ))}
+      </Carousel>
+    );
+  },
+};
+
+export const Indicator: Story = {
+  args: {
+    children: festivalLinupes.map((fetsival) => (
+      <HeroTile key={fetsival.name} {...fetsival} />
+    )),
+    hasIndicator: true,
+  },
+  render: (args) => {
+    return (
+      <Carousel {...args}>
+        {festivalLinupes.map((fetsival) => (
+          <HeroTile key={fetsival.name} {...fetsival} />
+        ))}
+      </Carousel>
+    );
   },
 };
