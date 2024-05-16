@@ -5,13 +5,26 @@ import { cn } from '@/app/lib/utils';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useEffect, useState } from 'react';
 
+interface IndicatorProps {
+  cur: number;
+  total: number;
+}
+
+function Indicator({ cur, total }: IndicatorProps) {
+  return (
+    <div className="absolute z-50 bottom-[55px] right-4 bg-bgBlack text-white font-bold text-xs px-2.5 py-[1px] rounded-lg">
+      {`${cur + 1} / ${total}`}
+    </div>
+  );
+}
+
 type CarouselProps = {
   children: React.ReactNode;
   hasIndicator?: boolean;
   className?: string;
 };
 
-export default function Carousel({
+function Carousel({
   children,
   className,
   hasIndicator = false,
@@ -35,11 +48,11 @@ export default function Carousel({
       <div className="h-full w-full relative" ref={emblaRef}>
         <div className={cn('flex h-full w-full', className)}>{children}</div>
         {hasIndicator && Array.isArray(children) && (
-          <div className="absolute z-50 bottom-[55px] right-4 bg-bgBlack text-white font-bold text-xs px-2.5 py-[1px] rounded-lg">
-            {`${currentIndex + 1} / ${children.length}`}
-          </div>
+          <Indicator cur={currentIndex} total={children.length} />
         )}
       </div>
     </IntlProvider>
   );
 }
+
+export default Carousel;
