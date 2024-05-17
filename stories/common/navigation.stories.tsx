@@ -5,9 +5,8 @@ const meta: Meta<typeof Navigation> = {
   title: 'COMMON/Navigation',
   component: Navigation,
   argTypes: {
-    hasBackButton: { control: 'boolean' },
-    isLogo: { control: 'boolean' },
     title: { control: 'text' },
+    variant: { control: 'radio', options: ['main', 'back', 'back-with-logo'] },
   },
   parameters: {
     nextjs: {
@@ -24,13 +23,13 @@ export default meta;
 type Story = StoryObj<typeof Navigation>;
 
 export const Default: Story = {
-  args: { hasBackButton: false },
+  args: { variant: 'main' },
 };
 
 export const Back_Button: Story = {
-  args: { hasBackButton: true },
+  args: { variant: 'back-with-logo' },
 };
 
 export const Back_Button_Not_Logo: Story = {
-  args: { hasBackButton: true, isLogo: false, title: '우리학교찾기' },
+  args: { variant: 'back', title: '검색' },
 };
