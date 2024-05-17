@@ -1,7 +1,7 @@
 'use client';
 
+import { AuthInfoSchema } from '@/app/lib/schema/schema';
 import { AuthTokens, User, post } from '@api/.';
-import { AuthInfoSchema } from '@app/[locale]/(back-nav)/login/schema';
 import { API_ROUTES, API_URL, COOKIE_KEYS } from '@lib/constants';
 import { useRouter } from '@lib/navigation';
 import { APIError } from '@lib/utils/validation';

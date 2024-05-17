@@ -25,6 +25,7 @@ export default function Tile({
             priority={priority}
             src={festivalimage ? festivalimage : NoLineup}
             alt={name}
+            sizes="auto"
             fill
           />
           <FadeOverlay />

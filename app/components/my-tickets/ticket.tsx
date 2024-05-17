@@ -1,6 +1,6 @@
+import { MyTicketInfo } from '@/app/lib/mock/type';
 import Logo from '@icons/logo-white.svg';
 import Glass from '@images/glass.jpeg';
-import { TicketInfo } from '@page/(back-nav)/(padded)/my-tickets/action';
 import Image from 'next/image';
 import { FiClock } from 'react-icons/fi';
 
@@ -12,7 +12,7 @@ import {
 import QrCode from './qr-code';
 import TicketTool from './ticket-tool';
 
-export default async function Ticket({ id, event, issued }: TicketInfo) {
+export default async function Ticket({ id, event, issued }: MyTicketInfo) {
   return (
     <AccordionItem
       value={String(id)}
