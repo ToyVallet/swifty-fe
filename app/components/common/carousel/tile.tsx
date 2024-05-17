@@ -3,7 +3,6 @@ import { FestivalInfo } from '@/app/lib/types';
 import NoLineup from '@images/lineup/no-lineup-image.webp';
 import dayjs from 'dayjs';
 import Image from 'next/image';
-
 import FadeOverlay from './fade-overlay';
 
 export default function Tile({
@@ -31,7 +30,7 @@ export default function Tile({
           <FadeOverlay />
         </figure>
         <div className="pt-[10px] flex flex-col items-between">
-          <div className="h-12 w-40 font-bold truncate">
+          <div className="h-12 w-[150px] font-bold truncate">
             <h4>{name}</h4>
             <p className="pt-1 truncate">{description}</p>
           </div>
@@ -40,8 +39,6 @@ export default function Tile({
             {period}
           </p>
         </div>
-        <p className='text-sm mt-[7px]'>{addr}</p>
-        <p className='text-gray-400 text-xs mt-[5px] gray-400 tracking-tight'>{period}</p>
       </div>
     </Link>
   );
