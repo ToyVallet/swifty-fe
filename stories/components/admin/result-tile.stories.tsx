@@ -1,5 +1,5 @@
-import { TicketInfo } from '@/app/[locale]/(back-nav)/admin/action';
 import { StudentInfo } from '@/app/components/admin';
+import { TicketInfo } from '@/app/lib/mock/type';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof StudentInfo> = {

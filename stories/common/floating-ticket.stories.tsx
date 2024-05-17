@@ -16,7 +16,7 @@ const meta: Meta<typeof FloatingButton> = {
       },
     },
   },
-  tags: ['autoDocs'],
+  tags: ['autodocs'],
 };
 
 export default meta;

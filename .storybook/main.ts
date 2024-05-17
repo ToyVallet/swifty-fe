@@ -1,10 +1,10 @@
 import type { StorybookConfig } from '@storybook/nextjs';
+import path from 'path';
 
 const config: StorybookConfig = {
   stories: [
     '../stories/**/*.mdx',
     '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-    '../components/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-onboarding',
@@ -12,6 +12,7 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@chromatic-com/storybook',
     '@storybook/addon-interactions',
+    'storybook-addon-module-mock',
   ],
   framework: {
     name: '@storybook/nextjs',
@@ -23,6 +24,10 @@ const config: StorybookConfig = {
   core: {
     builder: '@storybook/builder-webpack5',
   },
+  features: {
+    experimentalRSC: true,
+  },
+  staticDirs: ['../public'],
   // svg
   webpackFinal: async (config) => {
     const imageRule = config.module?.rules?.find((rule) => {

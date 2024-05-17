@@ -1,28 +1,60 @@
 'use client';
 
-import { type LineupInfo } from '@page/(back-nav)/lineup/page';
+import { IntlProvider } from '@/app/components/common';
+import { cn } from '@/app/lib/utils';
 import useEmblaCarousel from 'embla-carousel-react';
-import React from 'react';
+import { useEffect, useState } from 'react';
 
-import IntlProvider from '../intl-provider';
-import Tile from './tile';
+interface IndicatorProps {
+  cur: number;
+  total: number;
+}
+
+function Indicator({ cur, total }: IndicatorProps) {
+  return (
+    <div className="absolute z-50 bottom-[55px] right-4 bg-bgBlack text-white font-bold text-xs px-2.5 py-[1px] rounded-lg">
+      {`${cur + 1} / ${total}`}
+    </div>
+  );
+}
 
 type CarouselProps = {
-  lineups: LineupInfo[];
+  children: React.ReactNode;
+  hasIndicator?: boolean;
+  className?: string;
+  align?: 'center' | 'start' | 'end';
 };
 
-export default function Carousel({ lineups }: CarouselProps) {
-  const [emblaRef] = useEmblaCarousel();
+function Carousel({
+  children,
+  className,
+  hasIndicator = false,
+  align = 'start',
+}: CarouselProps) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align });
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (emblaApi) {
+      const onSelect = () => setCurrentIndex(emblaApi.selectedScrollSnap());
+      emblaApi.on('select', onSelect);
+      setCurrentIndex(emblaApi.selectedScrollSnap());
+      return () => {
+        emblaApi.off('select', onSelect);
+      };
+    }
+  }, [emblaApi]);
 
   return (
     <IntlProvider>
-      <div className="absolute left-0 right-0 lg:max-w-[600px]" ref={emblaRef}>
-        <div className="flex gap-3 lg:gap lg:max-w-[600px]">
-          {lineups.map((tile, index) => (
-            <Tile key={index} priority={index === 0} {...tile} />
-          ))}
-        </div>
+      <div className="h-full w-full relative" ref={emblaRef}>
+        <div className={cn('flex h-full w-full', className)}>{children}</div>
+        {hasIndicator && Array.isArray(children) && (
+          <Indicator cur={currentIndex} total={children.length} />
+        )}
       </div>
     </IntlProvider>
   );
 }
+
+export default Carousel;

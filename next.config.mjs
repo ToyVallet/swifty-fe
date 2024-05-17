@@ -1,6 +1,5 @@
 import withBundleAnalyzer from '@next/bundle-analyzer';
 import withPlaiceholder from '@plaiceholder/next';
-import { withSentryConfig } from '@sentry/nextjs';
 import createNextIntlPlugin from 'next-intl/plugin';
 import withPWA from 'next-pwa';
 
@@ -43,27 +42,28 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'webinfo.dankook.ac.kr',
       },
-      { protocol: 'https', hostname: 'image.yes24.com' },
+      { protocol: 'https', hostname: 'scontent.cdninstagram.com' },
+      { protocol: 'https', hostname: 'sgyoonseul24.notion.site' },
+      { protocol: 'https', hostname: 'scontent-den2-1.cdninstagram.com' },
+      { protocol: 'https', hostname: 'www.danfesta.com' },
     ],
   },
 };
 
 export default withBundleAnalyzerConfig(
   withPWAConfig(
-    withSentryConfig(
-      withNextIntl(withPlaiceholder(nextConfig)),
-      {
-        silent: true,
-        org: 'danfesta',
-        project: 'javascript-nextjs',
-      },
-      {
-        widenClientFileUpload: true,
-        tunnelRoute: '/monitoring',
-        hideSourceMaps: true,
-        disableLogger: true,
-        automaticVercelMonitors: true,
-      },
-    ),
+    withNextIntl(withPlaiceholder(nextConfig)),
+    {
+      silent: true,
+      org: 'danfesta',
+      project: 'javascript-nextjs',
+    },
+    {
+      widenClientFileUpload: true,
+      tunnelRoute: '/monitoring',
+      hideSourceMaps: true,
+      disableLogger: true,
+      automaticVercelMonitors: true,
+    },
   ),
 );

@@ -1,3 +1,4 @@
+import { type FestivalEvent } from '@/app/lib/mock/type';
 import { get, getServerSideToken } from '@api/.';
 import {
   Card as CardComponent,
@@ -8,7 +9,6 @@ import {
 } from '@components/ui/card';
 import { API_ROUTES } from '@lib/constants';
 import { cn } from '@lib/utils';
-import { type FestivalEvent } from '@page/(back-nav)/(padded)/ticketing/action';
 import { getLocale } from 'next-intl/server';
 import Link from 'next/link';
 import { FiCalendar, FiClock } from 'react-icons/fi';
