@@ -43,8 +43,6 @@ export default function Footer() {
         </Link>
         &#93;
         <br />
-        통신판매업신고번호 2024-경기화성-0000 <br />
-        <br />
         이메일 info@feasta.kr
       </p>
       <div className="m-auto text-[9px] font-medium">
