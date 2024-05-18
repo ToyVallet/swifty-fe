@@ -6,6 +6,7 @@ import Image from 'next/image';
 
 export default function HeroTile({
   id,
+  addr,
   name,
   startdate,
   enddate,
@@ -32,13 +33,14 @@ export default function HeroTile({
         <div className="absolute bottom-0 left-0 right-0 top-0 bg-gradient-hero-carousel" />
       </div>
 
-      <div className="absolute bottom-[-16px] left-5 flex h-1/3 gap-y-1.5 flex-col rounded-2xl text-white">
-        <div className="flex flex-col text-xl font-semibold gap-1.5">
-          <h4>{name}</h4>
-          <span>{description}</span>
-        </div>
-        <div className="flex text-sm font-semibold">
-          <span>{formatDate(startdate, enddate, 'ko')}</span>
+      <div className="absolute bottom-[60px] left-5 right-[74px] flex h-[114px] gap-y-1.5 flex-col text-white">
+        <div className="text-xl font-semibold">
+          <span className='mt-[3px] text-xs leading-[18px] tracking-[-0.36px]'>{addr}</span>
+          <h4 className='font-bold text-[22px] leading-[33px] tracking-[-0.66px]'>{name}</h4>
+          <span className='block text-xl leading-[30px] tracking-[-0.6px] truncate'>{description}</span>
+          <span className='mt-[6px] text-sm tracking-[-0.42px]'>
+            {formatDate(startdate, enddate, 'ko')}
+          </span>
         </div>
       </div>
     </Link>

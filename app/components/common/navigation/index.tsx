@@ -20,7 +20,7 @@ export default function Navigation({ title, variant }: Props) {
         <>
           <LogoLink />
           <Link href="#" className="w-auto h-auto flex items-center">
-            <Magnifier fill="white" />
+            <Magnifier className="scale-90" fill="white" />
           </Link>
         </>
       )}
