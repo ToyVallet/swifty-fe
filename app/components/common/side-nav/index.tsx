@@ -56,11 +56,7 @@ export default async function SideNav() {
 
   return (
     <Sheet>
-      <Button
-        variant="transparent"
-        animateOnClick
-        className="w-auto h-auto p-1"
-      >
+      <Button variant="transparent" className="w-auto h-auto p-1">
         <SheetTrigger asChild>
           <IoIosMenu size={40} />
         </SheetTrigger>

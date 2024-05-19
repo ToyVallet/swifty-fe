@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@/app/lib/utils';
+import { cn } from '@lib/utils';
 import { cva } from 'class-variance-authority';
 import { MotionProps, motion } from 'framer-motion';
 import { useFormContext } from 'react-hook-form';
@@ -15,30 +15,31 @@ export type ButtonProps = MotionProps & {
   isLoading?: boolean;
   type?: 'submit' | 'reset' | 'button';
   disabled?: boolean;
-  variant?: 'filled' | 'outlined' | 'transparent' | 'bottom';
-  animateOnClick?: boolean;
+  variant?: 'default' | 'outlined' | 'transparent' | 'bottom';
 };
 
 export const buttonVariants = cva(
-  'w-full rounded-md h-12 px-4 flex items-center justify-center transition-colors duration-200 z-0',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md font-bold ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
-        filled: 'bg-primary text-neutral-50',
+        default: 'bg-primary text-neutral-50',
         outlined: 'border border-primary',
         transparent:
           'text-neutral-500 dark:text-neutral-500 bg-white dark:bg-[#0C0C0C] dark:active:bg-[#1C1C1C]',
         bottom:
           'absolute bottom-5 mx-auto w-[calc(100%-2.5rem)] bg-primary text-neutral-50',
       },
-      isDisabled: {
-        true: 'bg-neutral-500',
-        false: '',
+      size: {
+        default: 'h-[50px] px-4 py-2',
+        sm: 'h-9 rounded-md px-3',
+        lg: 'h-11 rounded-md px-8',
+        icon: 'h-[50px] w-[50px]',
       },
     },
     defaultVariants: {
-      variant: 'filled',
-      isDisabled: false,
+      variant: 'default',
+      size: 'default',
     },
   },
 );
@@ -46,10 +47,9 @@ export const buttonVariants = cva(
 export default function Button({
   className,
   children,
-  variant = 'filled',
+  variant = 'default',
   type = 'button',
   onClick,
-  animateOnClick = true,
   isLoading = false,
   disabled,
 }: ButtonProps) {
@@ -57,7 +57,8 @@ export default function Button({
   const motionProps = {
     variants: variants.button,
     initial: 'initial',
-    whileTap: animateOnClick ? 'dimmedAndSmaller' : 'dimmed',
+    whileTap: variant === 'outlined' ? 'lighterAndSmaller' : 'dimmedAndSmaller',
+    whileHover: variant === 'outlined' ? 'lighter' : '',
   };
 
   const isDisabled =
@@ -70,8 +71,28 @@ export default function Button({
       type={type}
       onClick={onClick}
       disabled={isDisabled}
-      className={cn(buttonVariants({ variant, isDisabled }), className)}
-      {...motionProps}
+      className={cn(buttonVariants({ variant }), className)}
+      initial={{
+        scale: 1,
+        background: '',
+        filter: 'brightness(1)',
+      }}
+      whileTap={{
+        scale: 0.99,
+        background: variant === 'outlined' ? '#FEFEFE' : '',
+        color: variant === 'outlined' ? '#000' : '',
+        filter: 'brightness(0.9)',
+      }}
+      whileHover={{
+        background: variant === 'outlined' ? '#FEFEFE' : '',
+        color: variant === 'outlined' ? '#000' : '',
+      }}
+      transition={{
+        type: 'spring',
+        stiffness: 250,
+        damping: 20,
+        duration: 0.01,
+      }}
     >
       {isLoading ? (
         <PulseLoader role="status" size={8} color="#f0f0f0" />

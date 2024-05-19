@@ -1,5 +1,5 @@
-import FestivalTiles from '@/app/components/home/festival-tile';
 import { AdBanner, Link, Navigation } from '@components/common';
+import FestivalTiles from '@components/home/festival-tile';
 
 import { getLineupInfos } from './action';
 
@@ -13,9 +13,8 @@ export default async function Home() {
         <FestivalTiles festivals={festivalLinupes} />
         <Link
           variant="outlined"
-          href={'/festivals'}
+          href="/festivals"
           className="border-white rounded-xl text-white"
-          scroll={false}
         >
           페스티벌 전체 보기
         </Link>

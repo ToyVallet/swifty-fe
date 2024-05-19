@@ -15,9 +15,14 @@ export const variants = {
       scale: 0.99,
       filter: 'brightness(0.9)',
     },
-    dimmed: {
-      scale: 1,
-      filter: 'brightness(0.9)',
+    lighter: {
+      background: '#FAFAFA',
+      color: '#000',
+    },
+    lighterAndSmaller: {
+      scale: 0.99,
+      background: '#FAFAFA',
+      color: '#000',
     },
     transition,
   },
