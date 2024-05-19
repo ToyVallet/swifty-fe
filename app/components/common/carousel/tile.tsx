@@ -1,7 +1,7 @@
-import { Link } from '@/app/components/common';
+import { ImageWithFallback, Link } from '@/app/components/common';
 import { FestivalInfo } from '@/app/lib/types';
 import dayjs from 'dayjs';
-import ImageWithFallback from '@/app/components/ui/image-with-fallback';
+import FallbackFestival from '@images/fallback-festival.png';
 
 export default function Tile({
   id,
@@ -19,13 +19,13 @@ export default function Tile({
       <div className="bg-bgBlack w-[150px] text-white ">
         <figure className="relative aspect-[3/4]">
           <ImageWithFallback
-            variant='festival'
             className="absolute object-cover rounded-xl"
-            priority={priority}
             src={festivalimage || ''}
             alt={name}
+            priority={priority}
             sizes="auto"
             fill
+            fallback={FallbackFestival}
           />
         </figure>
         <div className="pt-[10px] flex flex-col items-between">

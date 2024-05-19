@@ -15,3 +15,4 @@ export { default as Hero } from './hero';
 export { default as HeroTile } from './hero/hero-tile';
 export * from './menu-tiles';
 export { default as MenuTiles } from './menu-tiles';
+export { default as ImageWithFallback } from './image-with-fallback';
