@@ -31,7 +31,7 @@ export default function Tile({
           />
         </figure>
         <div className="pt-[10px] flex flex-col items-between">
-          <div className="h-12 w-40 font-bold truncate">
+          <div className="h-12 w-[150px] font-bold truncate">
             <h4>{name}</h4>
             <p className="pt-1 truncate">{description}</p>
           </div>
