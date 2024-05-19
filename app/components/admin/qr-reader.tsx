@@ -80,7 +80,6 @@ const QrReader = ({ onScan, paused }: QrReaderProps) => {
       <Button
         onClick={changeFacingMode}
         className="absolute bottom-4 right-4 text-neutral-200 bg-neutral-800 rounded-full bg-opacity-50 w-auto h-auto p-1"
-        animateOnClick
       >
         <MdOutlineChangeCircle size={40} />
       </Button>

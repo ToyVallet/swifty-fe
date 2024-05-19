@@ -2,21 +2,23 @@
 
 import { Link as IntlLink } from '@lib/navigation';
 import { cn } from '@lib/utils';
-import { ComponentProps } from 'react';
+import { ComponentProps, PropsWithChildren } from 'react';
 
 import Button, { ButtonProps } from './button';
 
-type LinkProps = {
-  children: React.ReactNode;
+type LinkProps = PropsWithChildren<{
+  disabled?: boolean;
   variant?: 'text' | ButtonProps['variant'];
   className?: string;
   href: string | { pathname: string; query: Record<string, string> };
-} & Omit<ComponentProps<typeof IntlLink>, 'href'>;
+}> &
+  Omit<ComponentProps<typeof IntlLink>, 'href'>;
 
 export default function Link({
   children,
   href,
   className,
+  disabled = false,
   variant = 'text',
   ...props
 }: LinkProps) {
@@ -31,7 +33,7 @@ export default function Link({
       {children}
     </IntlLink>
   ) : (
-    <Button variant={variant} className={className} animateOnClick>
+    <Button variant={variant} disabled={disabled} className={className}>
       <IntlLink
         href={href}
         className="w-full h-full flex justify-center items-center"
