@@ -18,7 +18,7 @@ export default function Link({
   children,
   href,
   className,
-  disabled,
+  disabled = false,
   variant = 'text',
   ...props
 }: LinkProps) {
