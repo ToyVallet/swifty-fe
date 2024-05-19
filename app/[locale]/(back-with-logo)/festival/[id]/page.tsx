@@ -1,11 +1,11 @@
-import { Hero, MenuTiles, TileHeader, TileInfo } from '@components/common';
+import { Hero, ImageWithFallback, MenuTiles, TileHeader, TileInfo } from '@components/common';
 import FadeOverlay from '@components/common/carousel/fade-overlay';
 import { LineUpSection, TopCard } from '@components/festival';
 import type { Locale, Params } from '@lib/types';
 import formatDate from '@lib/utils/parser/format-date';
-import Image from 'next/image';
 import { BsBellFill } from 'react-icons/bs';
 import { TiStarFullOutline } from 'react-icons/ti';
+import FallbackHero from '@images/fallback-hero.png';
 
 import { getFestivalInfos, getLineups } from './action';
 
@@ -43,11 +43,12 @@ export default async function FestivalHomePage({
   return (
     <div className="mb-[90px]">
       <Hero variant="image">
-        <Image
+        <ImageWithFallback
           src={festivalInfo.festivalimage ?? ''}
           alt={festivalInfo.festivalimage ?? ''}
           width={500}
           height={500}
+          fallback={FallbackHero}
         />
         <FadeOverlay />
       </Hero>
