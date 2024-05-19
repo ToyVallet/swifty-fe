@@ -31,7 +31,7 @@ function Carousel({
   hasIndicator = false,
   align = 'start',
 }: CarouselProps) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ align });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align, skipSnaps: true })
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
