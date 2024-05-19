@@ -7940,6 +7940,8 @@ __metadata:
     clsx: "npm:^2.1.0"
     cookies-next: "npm:^4.1.1"
     dayjs: "npm:^1.11.11"
+    embla-carousel: "npm:^8.1.1"
+    embla-carousel-autoplay: "npm:^8.1.1"
     embla-carousel-react: "npm:^8.0.0"
     eslint: "npm:^8"
     eslint-config-next: "npm:14.1.0"
@@ -10794,6 +10796,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"embla-carousel-autoplay@npm:^8.1.1":
+  version: 8.1.1
+  resolution: "embla-carousel-autoplay@npm:8.1.1"
+  peerDependencies:
+    embla-carousel: 8.1.1
+  checksum: 10c0/35419232b32d96c58a3f2e3272d77efb688bda29e3e840a2742fe0533f584a6882a8c73e0404ff9d39d0497592045f41588c9080fbd2ec782d30489294843a46
+  languageName: node
+  linkType: hard
+
 "embla-carousel-react@npm:^8.0.0":
   version: 8.0.1
   resolution: "embla-carousel-react@npm:8.0.1"
@@ -10819,6 +10830,13 @@ __metadata:
   version: 8.0.1
   resolution: "embla-carousel@npm:8.0.1"
   checksum: 10c0/9ce30759a77e75ff4ce490102c429794fd46f03bbcc4a6af4ecefbe55a5de5289b7ac0f7607d1774a9b23c241d5781bf3d45459590768b15679a9da5b56ef6df
+  languageName: node
+  linkType: hard
+
+"embla-carousel@npm:^8.1.1":
+  version: 8.1.1
+  resolution: "embla-carousel@npm:8.1.1"
+  checksum: 10c0/0669ddf6a325fda386a7634d7d512bbb524abbe3d83cd2d13ac03fda6cd3f4b1df0af4c77c5ab104d73208f0cda0c82ae1eba885eb5e0e5e8db7681d32ea8bf1
   languageName: node
   linkType: hard
 

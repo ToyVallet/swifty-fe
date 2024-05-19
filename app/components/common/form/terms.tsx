@@ -97,12 +97,7 @@ export default function Terms({
           전체 동의
         </label>
       </div>
-      <Button
-        type="submit"
-        variant="filled"
-        disabled={disabled}
-        onClick={() => onAccept?.()}
-      >
+      <Button type="submit" disabled={disabled} onClick={() => onAccept?.()}>
         다음
       </Button>
     </BottomSheet>

@@ -66,7 +66,7 @@ export default function TicketingForm({
         className="mb-4"
         placeholder="캡차를 입력하세요."
       />
-      <Button type="submit" variant="filled" className="mb-2">
+      <Button type="submit" className="mb-2">
         신청
       </Button>
       <span className="text-[10px] text-neutral-500">

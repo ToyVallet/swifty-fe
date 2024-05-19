@@ -8,7 +8,7 @@ export default async function RootNavLayout({ children }: PropsWithChildren) {
   return (
     <>
       <Hero>
-        <Carousel hasIndicator>
+        <Carousel hasIndicator autoplay>
           {fetivalLineups.map((fetsival) => (
             <HeroTile key={fetsival.name} {...fetsival} />
           ))}
