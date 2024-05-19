@@ -2,7 +2,7 @@ import NoLineup from '@images/lineup/no-lineup-image.webp';
 import { Link } from '@lib/navigation';
 import { FestivalInfo } from '@lib/types';
 import formatDate from '@lib/utils/parser/format-date';
-import Image from 'next/image';
+import ImageWithFallback from '@/app/components/ui/image-with-fallback';
 
 export default function HeroTile({
   id,
@@ -20,9 +20,10 @@ export default function HeroTile({
       className="relative flex-[0_0_100%] overflow-hidden"
     >
       <div className="aspect-square relative h-full w-full flex items-center justify-center">
-        <Image
+        <ImageWithFallback
+          variant='hero'
           priority={priority}
-          src={festivalimage ? festivalimage : NoLineup}
+          src={festivalimage || ''}
           alt={name}
           className="object-cover"
           quality={100}

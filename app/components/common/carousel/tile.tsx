@@ -5,6 +5,7 @@ import dayjs from 'dayjs';
 import Image from 'next/image';
 
 import FadeOverlay from './fade-overlay';
+import ImageWithFallback from '../../ui/image-with-fallback';
 
 export default function Tile({
   id,
@@ -21,10 +22,11 @@ export default function Tile({
     <Link href={`/festival/${id}`}>
       <div className="bg-bgBlack w-[150px] text-white ">
         <figure className="relative aspect-[3/4]">
-          <Image
+          <ImageWithFallback
+            variant='festival'
             className="absolute object-cover rounded-xl"
             priority={priority}
-            src={festivalimage ? festivalimage : NoLineup}
+            src={festivalimage || ''}
             alt={name}
             sizes="auto"
             fill
