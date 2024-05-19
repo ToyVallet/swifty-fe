@@ -140,12 +140,7 @@ export default function Phone({ type, token: tokenParam }: PhoneProps) {
           <span className="text-xs mt-4">
             휴대폰으로 발송된 6자리 인증번호를 입력해주세요.
           </span>
-          <Button
-            type="submit"
-            className="mt-14"
-            variant="filled"
-            isLoading={loading}
-          >
+          <Button type="submit" className="mt-14" isLoading={loading}>
             확인
           </Button>
         </Form>

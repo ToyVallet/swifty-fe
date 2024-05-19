@@ -64,9 +64,7 @@ export default function QrCode({
         <span className="text-sm text-neutral-400 w-full text-center">
           유효 시간: {parseMStoMinSec(leftTime)}
         </span>
-        <Button variant="filled" onClick={startTimer} animateOnClick>
-          재생성
-        </Button>
+        <Button onClick={startTimer}>재생성</Button>
       </div>
     </div>
   );
