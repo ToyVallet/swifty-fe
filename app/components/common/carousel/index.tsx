@@ -2,6 +2,8 @@
 
 import { IntlProvider } from '@/app/components/common';
 import { cn } from '@/app/lib/utils';
+import { EmblaOptionsType } from 'embla-carousel';
+import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useEffect, useState } from 'react';
 
@@ -18,20 +20,29 @@ function Indicator({ cur, total }: IndicatorProps) {
   );
 }
 
-type CarouselProps = {
+interface CarouselProps extends EmblaOptionsType {
   children: React.ReactNode;
   hasIndicator?: boolean;
   className?: string;
-  align?: 'center' | 'start' | 'end';
-};
+  autoplay?: boolean;
+}
 
 function Carousel({
   children,
   className,
   hasIndicator = false,
   align = 'start',
+  skipSnaps = true,
+  autoplay = false,
 }: CarouselProps) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ align, skipSnaps: true })
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      align,
+      skipSnaps,
+      loop: true,
+    },
+    [Autoplay({ playOnInit: autoplay, delay: 3000, stopOnMouseEnter: true })],
+  );
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
