@@ -1,11 +1,7 @@
 import { Link } from '@/app/components/common';
 import { FestivalInfo } from '@/app/lib/types';
-import NoLineup from '@images/lineup/no-lineup-image.webp';
 import dayjs from 'dayjs';
-import Image from 'next/image';
-
-import FadeOverlay from './fade-overlay';
-import ImageWithFallback from '../../ui/image-with-fallback';
+import ImageWithFallback from '@/app/components/ui/image-with-fallback';
 
 export default function Tile({
   id,
