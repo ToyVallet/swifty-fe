@@ -34,6 +34,7 @@ function Carousel({
   align = 'start',
   skipSnaps = true,
   autoplay = false,
+  duration = 3000,
 }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
@@ -41,7 +42,13 @@ function Carousel({
       skipSnaps,
       loop: true,
     },
-    [Autoplay({ playOnInit: autoplay, delay: 3000, stopOnMouseEnter: true })],
+    [
+      Autoplay({
+        playOnInit: autoplay,
+        delay: duration,
+        stopOnMouseEnter: true,
+      }),
+    ],
   );
   const [currentIndex, setCurrentIndex] = useState(0);
 
