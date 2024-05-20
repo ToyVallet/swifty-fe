@@ -1,10 +1,7 @@
-import { Link } from '@/app/components/common';
+import { ImageWithFallback, Link } from '@/app/components/common';
 import { FestivalInfo } from '@/app/lib/types';
-import NoLineup from '@images/lineup/no-lineup-image.webp';
 import dayjs from 'dayjs';
-import Image from 'next/image';
-
-import FadeOverlay from './fade-overlay';
+import FallbackFestival from '@images/fallback-festival.png';
 
 export default function Tile({
   id,
@@ -21,13 +18,14 @@ export default function Tile({
     <Link href={`/festival/${id}`}>
       <div className="bg-bgBlack w-[150px] text-white ">
         <figure className="relative aspect-[3/4]">
-          <Image
+          <ImageWithFallback
             className="absolute object-cover rounded-xl"
-            priority={priority}
-            src={festivalimage ? festivalimage : NoLineup}
+            src={festivalimage || ''}
             alt={name}
+            priority={priority}
             sizes="auto"
             fill
+            fallback={FallbackFestival}
           />
         </figure>
         <div className="pt-[10px] flex flex-col items-between">
